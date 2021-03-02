@@ -1,0 +1,49 @@
+Item 1: Consider static factory methods instead of constructors
+***************************************************************
+- tradition for obtaining an instance is to provide a public constructor
+- but this technique should be a part of our toolkit
+- a class can provide a public static factory method
+	- a static method that returns an instance of the class
+- not the same as the Factory method pattern from Design Patterns
+- instead of, or in addition to, public constructors
+- has both advantages and disadvantages
+- Advantages
+	- Has a name
+		- If constructor params do not describe the object being returned
+		- client code is easier to  read
+		- Class can only have a single constructor with a givensignature
+		- Some get around this by providing constructors with param lists that differ in type
+		- This is a bad idea
+		- User of API won't remember which constructor is which and will call the wrong one by mistake
+		- won't know what these constructors do without class documentation
+		- when you need multiple constructors with the same signature that do different things
+	- Not required to create a new object each time they're invoked
+		- allows immutable classes to use preconstructed instances, or to cache instances as they are constructed, and dispense them repeatedly
+		- it can greatly improve performance if equivalent objects are requested often, and if they are expensive to create
+		- returning the same object from repeated invocations allows classes to maintain strict control over what instances exist at any time
+		- said to be instance-controlled
+		- allows a class to guarantee that it is a singleton
+		- it also allows an immutable value class to make the guarantee thatno two equal instances exist
+	- Can return an object of any subtype of their return type
+		- Gives you great flexibility in choosing the class of the returned object
+		- an API can return objects without making their classes public
+		- hiding implementation classes in this fashion leads to a very compact API
+		- IOW, can create subtypes of classes which are hidden from the API interface
+	- class of the returned object can vary from call to call as a function of the input parameters
+		- And subtype of the declared return type is permissable
+- Limitation
+	- Classes without public of protected constructors cannot be subclassed
+		- can be a good things because it encourages programmers to use composition instead of inheritance
+		- they are hard for programmers to find, they do not stand out in API documentation
+		
+Item 2: Consider a builder when faced with many constructor parameters
+************************************************************
+- static factors and constructors do not scale well to many params
+- what sort of constructors or static factories should you write for such a class?
+- Can use telescope method but it is unwieldy
+- another approach is the JavaBean pattern (call setters)
+- bean can be in an inconsistent state partway through its construction
+- JavaBeans also can't make the class immutable
+- luckily, there is a third alternative which combines safety of telescoping with readability of JavaBeans pattern
+	- Is is a form of the Builder pattern
+- 
