@@ -37,7 +37,7 @@ Item 1: Consider static factory methods instead of constructors
 		- they are hard for programmers to find, they do not stand out in API documentation
 		
 Item 2: Consider a builder when faced with many constructor parameters
-************************************************************
+**********************************************************************
 - static factors and constructors do not scale well to many params
 - what sort of constructors or static factories should you write for such a class?
 - Can use telescope method but it is unwieldy
@@ -46,4 +46,37 @@ Item 2: Consider a builder when faced with many constructor parameters
 - JavaBeans also can't make the class immutable
 - luckily, there is a third alternative which combines safety of telescoping with readability of JavaBeans pattern
 	- Is is a form of the Builder pattern
-- 
+- using builder instead
+	- instead of making object directly, client calls a constructor (or static factory) with all of the required parameters and gets a builder object
+	- then the clicent calls setter like methods on the builder object to set each optional parameter of interest
+	- finally the client calls a parameterless build method to generate the object, which is typically immutable
+	- the builder is typically a static member class of the class it builds
+- the NutritionFacts class is immutable and all parameter default values are in one place
+- the builder's setter methods return the builder itself so that invocations can be chained, resulting in a fluent API
+- the client code is easy to write, and more importantly, easy to read
+
+Item 3: Enforce the singleton property with a private constructor or an enum type
+*********************************************************************************
+- a singleton is simply a class that is instantiated exactly once
+- typically represent either a stateless object such as a function or a system component that is intrinsically unique
+- making a class a singleton can make it difficult to test it's clients
+- there are two common ways to implement singletons
+	- both are based onkeeping the constructor private and exporting a public static member to provide access to the sole instance
+- in one approach the member is a final field
+	- public static final Elvis INSTANCE = new Elvis()
+	- the private constructor is called only once, to initialize the public static final field
+	- the lack of a public of protected constructor guarantees a single universe. Exactly one Elvis instance will exist once the class is initialized
+	- nothing that a client does can change this
+- Singleton classes are used for logging, driver objects, caching and thread pool, database connections
+
+Item 4: Enforce noninstantiability with a private constructor
+*************************************************************
+- occasionally you'll want to write a class that is just a grouping of static methods and static fields
+- some people avoid but they do have valid uses
+- they can be used to group static methods, influcing factories
+- such utility classes were not designed to be instantiated
+- but java provides a default constructor
+- can't enforce noninstantiability by making a class abstract
+
+Item 5: Prefer dependency injection to hardwiring resources
+***********************************************************
