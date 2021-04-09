@@ -80,3 +80,40 @@ Item 4: Enforce noninstantiability with a private constructor
 
 Item 5: Prefer dependency injection to hardwiring resources
 ***********************************************************
+- many classes depend on one or more underlying resources
+- i.e. dictionary, sometimes implemented as a static utility class
+	- inflexible and untestable
+- not uncommon to see them implemented as singletons
+- neither approach is satisfactory because they assume there is only one dictionary worth using
+- what is required is the ability to support multiple instances of the class
+- a simple pattern is to pass the resource into the constructor when creating a new instance
+	- this is one form of dependency injection
+	- the dictionary is a dependency of the spell checker
+	- injected into the spell checker when it is created
+	
+Item 6: Avoid Creating Unnecessary Objects
+******************************************
+- it is often appropriate to reuse a single object instead of creating a new, equivalent object each time it is needed
+- an object can always be reused if it is immutable
+
+Item 7: Eliminate Obsolete Object References
+********************************************
+- With Java you still do need to think about memory management
+- memory leaks which can manifest itself as reduced performance due to increased garbage collector activity, inreased memory footprint
+- null out references once they become obsolete
+
+Item 8: Avoid Finalizers and Cleaners
+*************************************
+- finalizers have a few valid uses, but usually you should avoid them
+- as of Java 9 finalizers have been deprecated
+- The Java 9 replacement is cleaners, less dangerous but still unpredictable, slow, and generally unnecessary
+- never do anything time-critical in a finalizer or cleaner
+- big error to depend on a finalizer to close files
+- it is about fifty times slower to create and destroy objects with finalizers
+
+Item 9: Prefer Try With Resources, to Try Finally
+*************************************************
+- Many resources must be closed manually by invoking a close method
+- while many resources use finalizers as a safety net, finalizers don't work very well
+- these problems were solved in one fell swoop when Java 7 introduced the try-with-resources statement
+- to be usable with this construct, a resource must implement the AutoCloseable interface
