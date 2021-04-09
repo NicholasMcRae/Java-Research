@@ -1,0 +1,45 @@
+Introduction
+************
+- Object is a concrete class designed for extension
+- all of its nonfinal methods are designed to be overridden
+- responsibility of any class overriding these methods to obey their general contracts
+-failure to do so will prevent other classes that depend on the contracts from functioning properly
+- this chapter tells you when and how to override the nonfinal object methods
+
+Item 10: Obey the General Contract when Overriding Equals
+**************************************************
+- overriding the equals method seems simple, but there are many ways to get it wrong, and consequences can be dire
+- the easiest way to avoid problems is not to override the equals method
+- right thing to do if:
+	- each instance of the class is herently unique
+	- such as Thread that represent active entities rather than values
+	- equals has the right behavior for these classes
+- there is no need for the class to provide a logical equality test
+	- designers thinking the client wouldn't want this functionality
+- a superclass has already overriden equals, and it's behavior is appropriate for this class
+- the class is private or package private, and you are certain it will never be invoked
+- you can override the equals method to ensure that it isn't invoked accidentally
+- it is appropriate to override equals when a class has a notion of logical equality that differs from mere object identity
+	- and a superlcass that has not already overriden equals
+- generally the case for value classes
+
+Item 11: Always override hashCode when you override equals
+**********************************************************
+- you have to do this or your class will violate the general contract for hashCode
+- equal objects must have equal hash codes
+
+Item 12: Always Override toString
+*********************************
+- returned string should be a concise but informative representation that is easy for a person to read
+- makes your class much more pleasant to use and makes systems using the class easier to debug
+- when practical, the method should return all of th einteresting information contained in the object
+
+Item 13: Override Clone Judiciously 
+***********************************
+- this item tells you how to implement a well behaved clone method
+- lots of detail that I'm going to forget
+
+Item 14: Consider Implementing Comparable
+*****************************************
+- Comparable is the sole method in the Comparable interface
+- a class indicates that its instances have a natural ordering
