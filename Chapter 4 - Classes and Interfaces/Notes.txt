@@ -1,0 +1,88 @@
+Item 15: Minimize the Accessibility of Classes and Members
+**********************************************************
+- most important factor of a component is the degree to which it hides its internal data and implementation details
+- separates API from implementation
+- important for many reasons, most of which stem from that it decouples the components that comprise a system
+	- allows them to be developed, tested, optimized, used, and modified in isolation
+	- speeds up development because components can be developed in parallel
+- make each class or member as inaccessible as possible
+
+Item 16: In Public Classes, use accessor methods, not public fields
+*******************************************************************
+- need getters and setters
+- if a class is package-private or is a private nested class, there is nothing inherently wrong with exposing its data fields
+
+Item 17: Minimize Mutability
+****************************
+- immutable classes are less prone to error and more secure
+- to make a class immutable, follow these five rules:
+	- don't provide methods that mutate
+	- ensure classes can't be extended
+	- make all fields final
+	- make all fields private
+	- ensure exclusive access to any mutable components
+	
+Item 18: Favor Composition Over Inheritance
+*******************************************
+- inheritance is a powerful way to achieve code reuse, but not always best tool for the job
+- used inappropriately, it leads to fragile software
+- safe to use inheritance within a package, where subclass and superclass implementations are under control of same people
+- also safe when extending classes specifically designed for extension
+- inheriting from ordinary concrete classes across package boundaries is dangerous
+- inheritance violates encapsulation
+	- if superclass changes, the subclass may break
+	- a subclass must evolve in tandem with its superclass
+- composition - instead of extending existing class, give your new class a private field that references an instance of the existing class
+- existing class becomes a component of the new one
+- each instance method in new class invokes corresponding method on contained instance of existing class, called forwarding
+- the resulting class will have no dependencies on the implementation details of the existing class
+
+Item 19: Design and Document for Inheritance or else prohibit it
+****************************************************************
+- what does it mean for a class to be designed and documented for inheritance?
+- class must document precisely the effects of overriding any method
+- other points
+
+Item 20: Prefer Interfaces to Abstract Classes
+**********************************************
+- java has two mechanisms that permit multiple implementations: interfaces and abstract classes
+- if we use abstract class, a class must be a subclass of the abstract class
+- constrains their use as type definitions
+- existing classes can easily be retrofitted to implement a new interface
+
+Item 21: Design Interfaces for Posterity
+****************************************
+- In Java 8, the default method construct was added
+- Adding new methods to existing interfaces is fraught with risk
+- Before Java 8, implementations were written with understanding that their interfaces would never acquire any new methods
+- it is still of utmost importance to design interfaces with great care
+
+Item 22: Use Interfaces Only to Define Types
+********************************************
+- interfaces serve as a type that can be used to refer to instances of a class
+- that a class implements an interface should hterefore say something about what a client can do with instances of the class
+- it is inappropriate to define an interface for any other purpose
+- the constant interface pattern is a poor use of interfaces
+
+Item 23: Prefer Class Hierarchies to Tagged Classes
+***************************************************
+- you may run across a class whose instances come in two or more flavors and contain a tag field
+- tagged classes have numerous shortcomings
+
+Item 24: Favor Static Member Classes over Nonstatic
+***************************************************
+- a nested class is a class defined within another class
+- a nested class should exist only to serve its enclosing class
+- if a nested class would be useful in another context it should be a top level class
+- four types of nested classes
+	- static member
+	- nonstatic member
+	- anonymous
+	- local classes
+- all but the first kind are known as inner classes
+- this item tells you when to use which kind of nested class and why
+
+Item 25: Limit Source Files to a Single Top-Level Class
+*******************************************************
+- Java compiler lets you define multiple classes in a single source file, there is no benefit and significant risks
+- makes it possible to provide multiple definitions for class
