@@ -1,0 +1,40 @@
+In Java 8 functional interfaces, lambdas, and method references were added to make it easier to
+create function objects. The streams API was added in tandem with these language changes to provide library support.
+In this chapter, we discuss how to make best use of these facilities
+
+Item 42: Prefer Lambdas to Anonymous Classes
+********************************************
+- historically, interfaces with a single abstract method were used as function types
+- since jdk 1.1 the primary means of creating a function object was the anonymous class
+- In Java 8, the language formalized the notion that interfaces with a single abstract method are special and deserve special treatment
+- known as functional interfaces
+- the language allows you to create instances of these interfaces using lambda expressions
+
+Item 43: Prefer Method References to Lambdas
+********************************************
+- the advantage of lambdas over anonymous classes is that they are more succint
+- method references are even more succinct than lambdas
+
+Item 44: Favor the use of standard functional interfaces
+********************************************************
+- if one of the standard functional interfaces does the job, you should generally use it in preference
+to a purpose-built functional interface
+
+Item 45: Use Streams Judiciously
+********************************
+- when used appropriately, streams can make programs shorter and clearer
+- when used inappropriately, they can make programs difficult ot read and maintain
+- there are no hard and fast rules for when to use streams, but there are heuristics
+
+Item 46: Prefer Side-Effect-Free Functions in Streams
+*****************************************************
+- in order to obtain the expressiveness, speed, and in some cases parallizability you have to adopt the paradigm as well as the API
+
+Item 47: Prefer Collection to Stream as a Return Type
+*****************************************************
+- writing good code requires combining streams and iterations judiciously
+
+Item 48: Use Caution when making streams parallel
+*************************************************
+- Safety and liveness violations are a fact of life in concurrent programming
+- parallel stream pipelines are no exception
