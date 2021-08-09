@@ -1,0 +1,44 @@
+Java supports two special-purpose families of reference types: enum type, and annotation type. This
+chapter discusses best practices for using these type families
+
+Item 34: Use Enums Instead of INT Constants
+*******************************************
+- enum type consists of a fixed set of constants
+- do this instead of ints
+- many advantages to doing this
+
+Item 35: Use Instance Fields Instead of Ordinals
+************************************************
+- all enums have an ordinal method which returns the numerical position of each enum constant in its type
+- don't use ordinal to derive associated value
+- maintenance nightmare
+
+Item 36: Use Enumset instead of bit fields
+******************************************
+- bit fields have all the disadvantages of int enum constants and more
+- it is even harder to interpret a bit field than a simple int enum constant
+
+Item 37: Use Enummap instead of ordinal indexing
+************************************************
+- this technique works, but it is fraught with problems, because arrays are not compatible with generics
+
+Item 38: Emulate Extensible Enums with Interfaces
+*************************************************
+- for the most part, extensibility of enums turns out to be a bad idea
+
+Item 39: Prefer Annotations to Naming Patterns
+**********************************************
+- historically, it was common to use naming patterns to indicate that some program elements demanded special treatment by a tool or framework
+- this technique works, but it has several big disadvantages
+
+Item 40: Consistently Use the Override Annotation
+*************************************************
+- this annotation can be used only on method declarations
+- it indicates that the annotated method declaration overrides a declaration in a supertype
+- if you consistently use this annotation it will protect you from a large class of nefarious bugs
+
+Item 41: Use Marker Interfaces to Define Types
+***********************************************
+- A marker interfaace is an interface that contains no method declarations but merely designates (marks) a class
+that implements the interface as having some property
+- in summary, marker interfaces and marker annotations both have their uses
