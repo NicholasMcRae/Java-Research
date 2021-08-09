@@ -37,4 +37,4 @@ Item 47: Prefer Collection to Stream as a Return Type
 Item 48: Use Caution when making streams parallel
 *************************************************
 - Safety and liveness violations are a fact of life in concurrent programming
-- parallel stream pipelines are no exception
+- parallel stream pipelines are no exception.
