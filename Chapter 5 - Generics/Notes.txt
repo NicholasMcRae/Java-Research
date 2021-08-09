@@ -1,0 +1,43 @@
+Item 26: Don't Use Raw Types
+****************************
+- a class or interface whose declaration has one or more type parameters is a generic class or interface
+- each generic type defines a raw type, which is the name of the generic type used without any accompanying type parameters
+- raw types behave as if all of the generic type information were erased from the type declaration
+- they exist for compatibility with pre-generics code
+- if you use this declaration today and accidentally put a coin into your collection it compiles and runs without error
+
+Item 27: Eliminate Unchecked Warnings
+*************************************
+- when you program with generics, you will see many compiler warnings
+- the more experience you acquire with generics, the fewer warnings you'll get, but don't expect newly written code to compile cleanly
+- many unchecked warnings are easy to eliminate
+
+Item 28: Prefer Lists to Arrays
+*******************************
+- arrays are covariant
+- generics are invaraint
+- makes arrays deficient
+
+Item 29: Favor Generic Types
+****************************
+- writing your own generic types is a bit more difficult, but it's worth the effort to learn how
+
+Item 30: Favor Generic Methods
+******************************
+- just as classes can be generic, so can methods
+- static utility methods that operate on parameterized types are usually generic
+
+Item 31: Use Bounded Wildcards to Increase API Flexibility
+**********************************************************
+- Sometimes you need more flexibility than invariant typing can provide
+
+Item 32: Combine Generics and Varargs judiciously
+*************************************************
+- vararg methods and generics would be expected to interact gracefully, but they do not
+
+Item 33: Consider Typesafe Heterogeneous Containers
+***************************************************
+- In some cases it is the container that is parameterized, which limits you to a fixed number of type parameters per container
+- normally that is exactly what you want
+- somehow, however, you need more flexibility
+- luckily, there is an easy way to achieve this effect
