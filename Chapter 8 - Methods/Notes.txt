@@ -1,0 +1,56 @@
+Methods
+*******
+- how to treat parameters and return values, how to design method signatures, how to document methods
+- much of this material applies to constructors as well as methods
+- focuses on usability, roburstness, and flexibility
+
+Item 49: Check Paramters for Validity
+*************************************
+- you should document restrictions and enforce them with checks at the beginninf of the method body
+- special case of the general principle that you should attempt to detect errors as soon as possible after they occur
+- failing to do so makes it less likely that an error will be detected and makes it harder to determine the source of an error once it has been detected
+- fail cleanly with an appropriate exception
+
+Item 50: Make Defensive Copies When Needed
+******************************************
+- Java is a pleasure to use because it is a safe language
+- in the absence of native methods it is immune to buffer overruns, pointers, and memory corruption errors etc
+- in a safe language, it is possible to write classes and know with certainty that their invariants will hold
+- not possible in languages that treat all of memory as one giant array
+- even in a safe language, you aren't insulated from other classes without some effort on your part
+- you must program defensively, with the assumption that clients of your class will do their best to destroy it's invariants
+- more commonly, your class will have to cope with unexpected behavior resulting from the honest mistakes of well intentioned programmers
+- Sometimes a class can accidentally allow others to mutate it's state
+
+Item 51: Design Method Signatures Carefully
+*******************************************
+- this item is a grab bag of API design hints that don't quite deserve items of their own
+- taken together, they'll help make your API easier to learn and use and less prone to errors
+- choose method names carefully
+- don't go overboard in providing convenience methods
+	- when in doubt, leave it out
+- avoid long parameter lists
+- long sequences of identically typed parameters are especially harmful
+- for parameter types, favor interfaces over classes
+- prefer two element enum types
+
+Item 52: Use Overloading Judiciously
+************************************
+- selection among overloaded methods is static
+- selection among overridden methods is dynamic
+- do not overload methods to take different functional interfaces in the same argument position
+
+Item 53: Use Varargs Judiciously
+********************************
+- A few different cases for this
+
+Item 54: Return Empty Collections or Arrays, not Nulls
+******************************************************
+
+Item 55: Return Optionals Judiciously
+*************************************
+- 
+
+Item 56: Write Doc Comments for all exposed API elements
+********************************************************
+- If an API is to be usable, it must be documented
