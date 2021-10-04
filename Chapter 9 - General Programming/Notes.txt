@@ -1,0 +1,51 @@
+- devoted to the nuts and bolts of the language, local variables, control structures etc
+
+Item 57: Minimize the Scope of Local Variables
+**********************************************
+- increase readability and maintainability of your code and reduce the likelihood of error
+- the most powerful technique is to declare it where it is first used
+- if you don't yet have enough information to initialize a variable, you should postpone the declaration until you do
+
+Item 58: Prefer For-Each Loops to Traditional For Loops
+*******************************************************
+
+Item 59: Know and Use the Libraries
+***********************************
+- sometimes our own utility methods don't actually work, so use libraries
+
+Item 60: Avoid Float and Double if Exact Answers are required
+*************************************************************
+- the float and double types are ill suited for monetary calculations
+- because it is impossible to represent 0.1 exactly
+
+Item 61: Prefer Primitive Types to Boxed Primitives
+***************************************************
+- there are real differences between the two, and it's important that you remain aware o which you are using and that
+you choose carefully between them
+
+Item 62: Avoid Strings Where Other Types Are More Appropriate
+*************************************************************
+- Strings are poor substitutes for other value types
+
+Item 63: Beware the performance of string concatenation
+*******************************************************
+- Bad performance
+
+Item 64: Refer to Objects by Their Interfaces
+*********************************************
+- More generally, you shoudl favor the use of interfaces over classes to refer to objects
+
+Item 65: Prefer Interfaces to Reflection
+****************************************
+
+Item 66: Use Native Methods Judiciously
+***************************************
+- JNI allows Java programs to call native methods in native languages
+
+Item 67: Optimize Judiciously
+*****************************
+- we should forget about small efficiencies, say about 97% of the time
+
+Item 68: Adhere to Generally Accepted Naming Conventions
+********************************************************
+- use conventions as specified in the java language specification
