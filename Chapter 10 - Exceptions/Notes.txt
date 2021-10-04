@@ -1,0 +1,40 @@
+Item 69: Use Exceptions Only For Exceptional Conditions
+********************************************************
+- should only be used for exceptional conditions, never for ordinary control flow
+- a well designed API must not force it's clients to use exceptions for ordinary control flow
+
+Item 70: Checked Exceptions for Recoverable Conditions and Runtime Exceptions for Programming Errors
+****************************************************************************************************
+- checked exceptions for conditions from which the caller can reasonably recover
+- runtime exceptions to indicate programming errors
+
+Item 71: Avoid Unnecessary Use of Checked Exceptions
+****************************************************
+- places a burden on the user of the API
+
+Item 72: Favor the Use of Standard Exceptions
+*********************************************
+- an expert programmer will use code reuse
+- Java libraries provide a set of exceptions that cover most of the exception throwing needs of most APIs
+
+Item 73: Throw Exceptions Appropriate to the Abstraction
+********************************************************
+- a method shouldn't throw an exception that has no connection to the task it performs
+- higher layers should catch lower level exceptions, and throw exceptions that can be explained in terms of the higher level abstraction
+
+Item 74: Document All Exceptions Thrown by Each Method
+******************************************************
+- a description of the exception is an important part of the documentation required to use the method properly
+
+Item 75: Include Failure-Capture Information in Detail Messages
+***************************************************************
+- critically important that the exception's toString method returns as much information as possible
+- should capture the failure
+
+Item 76: Strive for Failure Atomicity
+*************************************
+- a failed method invocation should leave the object in the state that it was in prior to the invocation
+
+Item 77: Don't Ignore Exceptions
+********************************
+- when th designers of an API include exceptions, don't ignore it
