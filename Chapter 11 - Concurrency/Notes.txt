@@ -1,0 +1,37 @@
+Item 78: Synchronize Access to Shared Mutable Data
+**************************************************
+- synchronized keyword ensures that only a single thread can execute a method or block at one time
+- proper use of synchronization guarantees that no method will ever observe the object in an inconsistent state
+- this is only half the story. Without synchronization, one thread's changes might not be visible to other threads
+- the language specification guarantees that reading or writing a variable is atomic unless the variable is of type long or double
+- synchronization is required for reliable communication between threads as well as for mutual exclusion
+- not guaranteed to work unless both read and write operations are synchronized
+
+Item 79: Avoid Excessive Synchronization
+****************************************
+- excessiveness can cause reduced performance, deadlock, or even nondeterministic behaviour
+- never cede control to the client within a synchronized method or block
+
+Item 80: Prefer Executors, Tasks, and Streams to Threads
+********************************************************
+
+Item 81: Prefer Concurrency Utilities to WAIT and NOTIFY
+********************************************************
+- given the difficulty of using wait and notify correctly, you should use the higher level concurrency utilities instead
+
+Item 82: Document Thread Safety
+*******************************
+- how a class behaves when its methods are used concurrently is an important part of its contract with its clients
+- if you don't document, users will be forced to make assumptions
+- may perform insufficient or excessive synchronization
+- to enable safe concurrent user, a class must clearly document what level of thread safety it supports
+
+Item 83: Use Lazy Initialization Judiciously
+********************************************
+- act of delaying initialization of a field until its value is needed
+- don't do it unless you need to
+- under most circumstances, normal initialization is preferable to lazy initialization
+
+Item 84: Don't Depend on the Thread Scheduler
+*********************************************
+- well-written programs shouldn't depend on the details of this policy
