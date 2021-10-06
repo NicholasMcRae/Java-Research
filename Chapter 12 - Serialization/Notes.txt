@@ -1,0 +1,31 @@
+- serialization is Java's framework for encoding objects as byte streams and reconstructing them from their encodings
+
+Item 85: Prefer Alternatives to Java Serialization
+**************************************************
+- Applications can be vulnerable to attacks even if they did nothing wrong
+- the best way to avoid serialization exploits is to never deserialize anything
+- There is no reason to use Java serialization in any new system you write
+
+Item 86: Implement Serializable With Great Caution
+**************************************************
+- misconception that serialization requires little effort on the part of the programmer
+- the truth is far more complex
+- the long-term costs are often substantial
+- a major cost of implementing it is that it decreases the flexibility to change a class's implementation once it has been released
+- increases the likelihood of bugs and security holes
+
+Item 87: Consider Using a Custom Serialized Form
+************************************************
+- do not accept the default serialized form without first considering whether it is appropriate
+
+Item 88: Write ReadObject Methods Defensively
+*********************************************
+- 
+
+Item 89: For Instance Control, Prefer Enum Types to ReadResolve
+***************************************************************
+- if you depend on readresolve for instance control, all instance fields with object reference types must be declared transient
+
+Item 90: Consider Serialization Proxies Instead of Serialized Instances
+***********************************************************************
+- 
