@@ -1,0 +1,118 @@
+Sun Java System Application Server Administration Guide
+
+Chapter 1: Getting Started
+**************************
+- Tasks
+	- Deploying applications
+	- Creating and configuring domains
+	- Server instances and resources
+	- Controlling (starting and stopping) domains and server instances
+	- Managing profiles and clusters
+	- Monitoring and managing performance
+	- Diagnosing and troubleshooting problems
+- Application Server Overview
+	- Java EE Compatible Server for dev and deploy of Java EE Applications and Java Web Services
+	- Key features
+		- Scalable transaction management
+		- Container-managed persistence runtime
+		- Performant Web Services
+		- Clustering
+		- High availability
+		- Security
+		- Integration Capabilities
+	- Usage Profile
+		- Every admin domain has a usage profile, identifies capabilities of domain. Application Server provides following profiles
+			- Developer - use this profile if your domain is a dev environment and you don't need clustering, load balancing, or session persistence
+			- Cluster - if you need to create clusters, but do not require high availability database
+			- Enterprise - use this profile if you need high availability databse and NSS keystore. Only usable if you install HADB and NSS separately
+		- The domain provides a preconfigured runtime for the user applications
+		- Usage profiles facilitates distinction between app server binaries and runtime configuration
+		- Profiles enable you to use same installation of application server to create different domains with profiles that suit specific needs
+			- i.e. dev might want to use an app server to get to know latest Java EE specs, does not need stringent security settings
+			- user who wants to deploy applications in a production environment needs a secure environment
+		- Using enterprise profile
+	- What is the Application Server?
+		- supports services from Web publishing to enterprise-scale transaction processing, while enabling devs to build apps based on JSP, Java Servlets, and JavaBeans technology
+		- Clustering and Enterprise profiles provide clustering and failover technologies, which enable you to run scalable and highly available Java EE Applications
+		- Clustering
+			- application server instances that work together as one logical entity - each instance has same configuration and same applications deployed to it
+				- increased capacity of the system
+			- HTTP RMI/IIOP, and JMS load balancing systems distribute requests to health application server instances in the cluster
+		- High Availability
+			- Availability allows for failover protection of application server instances in a cluster
+		- Application Server Architecture
+			- high level architecture of the application server - https://docs.oracle.com/cd/E19159-01/819-3671/ablaq/index.html
+			- Containers
+				- runtime environment that provides services such as security and transaction management to Java EE components
+				- Two types of container: Web and EJB
+					- Web components run within the web container
+					- EJB run with the EJB container
+			- Client Access
+				- at Runtime, browser clients access web applications by communication with the web server via HTTP, HTTPS for apps that require security communication
+				- Enterprise Bean clients communicate with the object request broker through the IIOP or IIOP/SSL protocols. Application server has separate listenters for each protocol, different port numbers
+			- Web Services
+				- on Java EE, possible to deploy a web application that provides a web service implemented by Java API. Can also be a client to other web services
+			- Services for Applications - containers provide services for applications
+				- Naming
+				- Security
+			- Transaction Management
+				- Indivisible unit of work
+		- Access to External Systems
+			- enables applications to access systems that are outside of the application server, connect through objects called resources
+			- one responsibility of administrator is resource configuration
+			- access to external systems through following APIs and components
+				- JDBC - database management system, JDBC API
+				- Messaging - Messages between components - Java Messaging Service API
+				- Connector - Enables integration between Java EE applications and existing enterprise information systems
+				- JavaMail - connect to SMTP server in order to send and receive e-mail
+				- Server administration - administrators deploys applications and monitors server's performance
+					- Administration tools provided by the application server
+		- Tools for administration
+			- Admin Console
+			- Command line interface
+			- JConsole
+			- Application Server Management Extension
+- Application Server Commands and Concepts
+	- Server consists of one or more domains
+	- Domain is an administrative boundary or context
+		- Each domain has an administration server associated with it and consists of zero or more standalone instances or clusters
+		- Each cluster has one or more homogeneous server instances
+		- A server instance is a single java virtual machine that runs the application server on a single physical machine, server instances in a domain can run on different physical hosts
+	- Domain is a group of instances that are administered together
+	- Each domain has its own configuration, log files, and application deployment areas that are independent of other domains
+	- Domain Administration Server
+	- Cluster
+	- Node agent
+	- Server Instance
+		- single Java EE compatible Java Virtual Machine hosting an Application Server on a single node
+		- Clustered Server instance
+		- Server Instance is a building block in the clustering, load balancing, and session persistence features of the application server
+	- Application Server Commands - ** - Lots of detail here that I didn't go over
+		- lots of detail here
+	- Application Server Configuration - ** - Lots of detail here that I didn't go over
+		- Stored in the domain.xml file
+		
+Chapter 2: Java Business Integration
+************************************
+- This is an implementation of the JSR 208 specification for Java Business Integration
+- JBI defines an environment for plug-in components that interact using a services model based directly on WSDL
+- Key components of the JBI environment are covered in these sections:
+	- JBI Components
+	- Service Assemblies
+	- Shared Libraries
+	- JBI Descriptors
+	
+Chapter 3: JDBC Resources
+*************************
+- Resources and Connection Pools
+- JDBC API to store, organize, and retrieve data
+- JDBC Resource provides applications with a means of connecting to a database
+
+Chapter 4: Configuring Java Message Service
+*******************************************
+- Allows JEE components to cereate, send, receive, and read messages, enables distributed communication that is loosely coupled
+
+	
+- Java Architecture
+- What problems do a java application server solve
+- Check out our DB Connection Code
