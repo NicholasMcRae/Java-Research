@@ -1,0 +1,77 @@
+wow, you must be bored, lol.   There are a couple websites that are related, but most of the work I do regularly revolves around the LREPFeeder.   This is the project that pulls all information from Cerner and inserts into the MySQL database.    It is definitely important to be correct (ministry reporting/funding), however the LRCP Decision Support team are reviewing the data regularly (and compare to previous months etc)
+They submit this info a few times... a couple months after it happens, then again at year end.   So it's not a huge deal if its wrong the first time, they can correct and resubmit
+8:29 AM
+Ok, so it's not necessarily directly affecting patient care decisions
+Jason Howe
+8:30 AM
+For the most part no.... but there is some info pulled in a couple MPages and a couple billing reports Karen has written
+Jason Howe
+8:32 AM
+The other nice piece is there are 3 schemas.   If something is installed and incorrect, if it is fixed same day, they would never notice.   Data is pulled to schema CernerExtract, then nightly job merges this with old OPIS data into schema "summa".   Most reporting is from summa... so there is a day delay in most of the data
+8:34 AM
+ok so by the CernerExtract schema you're referring to an in-house mySQL database? Then we have a job that pulls from that?
+Jason Howe
+8:41 AM
+yes, LREPS is a MySQL db.   So CCL isn't capable of connecting, so it's all java (and a couple php pages).   LRCP DS team queries this directly (they are pretty good at SQL) for random reports, as well they have their own schema they can pull information together with.   We have MPages that use this that just run java (tomcat project).   Karen's CCL billing reports call a java that gathers data and returns in a file.   And databook is the report that goes to the ministry for funding... it is java called directly from the gateway
+8:43 AM
+Oh ok. I'll have to save this convo so I can remember all this. Do you have a testing / promote process? Can changes be validated in dev?
+And I assume once you're ready to go live it is similar to Case Costing? You're just re-building and installing a JAR .. or whatever type of package?
+Jason Howe
+8:49 AM
+dev can be real difficult depending on what you are testing.   I'm still working on a strategy for this with the new servers.   There are lots of tables that must all align to do a full test (ie. Chemo info relies on Visit info).  So sometimes its a matter of setting up the database with enough information to be useful.   I'm still refining this, so that the production db can be copied down to dev for testing when needed.   Then the other issue ends up being where is the testing data coming from... CERNER_P0207, or CERNER_C0207.   Sometimes testing gets done in prod for easy issues (as it can be verified in CernerExtract before it makes it to summa), but it would be nice to get away from doing this.
+Yes, we deploy jars to lrepsprd/lrepsdev, and wars to ditjavaprd
+Jason Howe
+8:52 AM
+Decent documentation can be found here:   https://tsweb.lhsc.on.ca/itswiki/doku.php?id=data_integration:lreps
+8:52 AM
+That's good info, thanks. You're probably eager to have someone give you a hand with this. It was probably nice when Dave was around
+Then at least you could bounce ideas off of each other
+Jason Howe
+8:54 AM
+yes, Peter has worked on it a bit, Trinh has a small change assigned (but not started).   Dave was the expert even though I had worked on it for years before he left.   We had always split it where he knew the Visit/Disease info, while I understood the Chemo piece.    I've had to learn way to much since he has left
+8:59 AM
+That's mostly what I'm trying to avoid for the inevitable day that you and Pam get closer to retirement. I believe you're still a little ways off? It's really win-win to start this process as soon as possible. In the interim it only strengthens our team
+Jason Howe
+9:03 AM
+for sure, and I think Pam/Dorothy are on the same page now and trying to share this with some of the team.  I think it would be a steep learning curve if I didn't show up tomorrow!   Its not complicated code, it's just understanding how it all works together.   OPIS was the old system and we tried to shoehorn Cerner data into the same schema... and it isn't in the same format at all
+9:05 AM
+Yea exactly, your work specifically is very silo'd. I'm starting to better understand Pam's role, but yours is a bit foggy
+I think even a few diagrams that describe the systems you primarily work on, and the processes you use would help
+Actually making the changes aren't that big of an issue
+Maybe some of the limitations you find there is with the processes (like lack of dev etc)
+Jason Howe
+9:21 AM
+For the most part my time has been spent on LREPS, Surgical Case Tracking and server moves for all 2021.   LREPS is very time consuming as even a simple question can take hours to answer (find data in MySQL, find data in Cerner and understand how it got that way with the code in place).    I think development for most systems is fairly basic (point to dev db, run on laptop or dev server), with the exception of LREPS.
+Jason Howe
+9:22 AM
+I think the wiki has some of the info you are looking for, but it would be nice if we could clean it up a bit.
+ie. https://tsweb.lhsc.on.ca/itswiki/doku.php?id=data_integration:linux_application_servers
+https://tsweb.lhsc.on.ca/itswiki/doku.php?id=data_integration:java_projects
+9:24 AM
+Yea I wonder if we should get a bit of time every week for tasks like these, take a step back for two steps forward kind of thing
+Or even monthly
+It has to be done at some point, and clearly we're never going to not be busy .. lol
+Jason Howe
+9:25 AM
+for sure... maintaining our documentation always takes a back seat.    Even things like RBS and cut over steps seem to be out of date without regular reviews
+Jason Howe
+9:27 AM
+I sometimes just get sick of looking for info.   I have been taking some time recently to create a webpage on our servers that shows: html folders, apache config, cron jobs   at a glance.   I find we sometimes deploy new things without any documentation anywhere... then when its time to move servers things are missed
+9:27 AM
+Yea I find the same ... any documentation we have is a bit of a mess. Even leading the upgrade now I'm discovering that many of the test plans are out of date.
+To me it's just part of my daily routine to clean as I go
+Jason Howe
+9:29 AM
+I think that is a great strategy, but really depends on what I'm working on and priorities.   Sometimes it will get fixed, while other times its just onto the next thing
+9:29 AM
+Yea you and Pam seem to get more urgent stuff on your plate
+Jason Howe
+9:31 AM
+Our team has really grown in the code we support (java servers, MPages...), while nothing has really changed in organization of documentation.    Some on L drive, some in wiki, some undocumenated
+9:40 AM
+Maybe it's something I'll bring up with Dorothy, to have her advocate for a bit of time to contribute to this kind of thing. Rather than get in a situation like with Dave, where he was leaving and tried to do it all in one shot
+Jason Howe
+9:44 AM
+(y)
+9:44 AM
+How are you finding you're handling the pandemic lately? Driving you crazy yet?

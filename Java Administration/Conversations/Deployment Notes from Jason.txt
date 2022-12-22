@@ -1,0 +1,64 @@
+1:53 PM
+So it looks like changing the hard-coded URL got us past that error. I'm also running the Laboratory class with SW Centre locally just now. Do you have a usual protocol for testing / deployment? It sounds like I need to generate a new class file for the feeder, but didn't see the directory on node 1 or 2 in prod
+
+Jason Howe
+1:59 PM
+ya so this one got a bit messed up in how it is deployed.   It got included in the DIT_JAR_LIB project even though its not a library
+
+Jason Howe
+2:00 PM
+I'd be tempted to remove it from there... but the alternative is to add it into that git project, commit, then re-pull the dit_jar_lib project to the Cerner server
+
+2:03 PM
+I don't mind either, but it sounds like the latter would be quicker? Maybe we get the urgent change into prod, then I add the first part as a to do
+
+Jason Howe
+2:04 PM
+for sure quicker... but also has a higher potential for impact if dit_jar_lib has changed in some other way
+
+Jason Howe
+2:06 PM
+I might have a solution... I have to redeploy dit_jar_lib around Mar 1 for db connection changes.   You could test on dev by replacing $cust_script/java/dit_jar_lib/lhsc/CaseCosting.jar or O_CaseCosting.jar
+we will update my changes and your changes in the dit_jar_lib git project and deploy that all together?
+
+2:10 PM
+If you think that's the way to go fine by me. It was hard to gauge how urgent these fixes were, but if it's already been a week apparently not that urgent
+
+Jason Howe
+2:14 PM
+I think this is the way to go for now... just replace $cust_script/java/dit_jar_lib/CaseCosting.jar    (or whatever it is).    If you need to deploy before Mar 1... just do it the same in Prod.   When I redeploy dit_jar_lib on Mar 1, I'll just make sure whatever .jar is in P0207 will be included
+
+Jason Howe
+2:15 PM
+dit_jar_lib makes things easier for some things... but I cringe every time it needs to be redeployed.   It could really impact things if something unexpected gets altered
+
+2:18 PM
+Fair enough, we'll just go with your plan then, I'll keep you updated on how testing goes. They were pretty minor changes so I don't suspect any issue
+
+Jason Howe
+2:18 PM
+sorry... that path should include a /lhsc/
+ok, let me know if you run into any issues getting it deployed
+
+2:19 PM
+I ended up building out DIT_JAR_LIB as an external user library to get it to run. I'm not sure how that'll affect packaging things up, but I'll have to take a look
+It's funny.. I coded with Java for almost two years with 3M, but actually configuring and deploying did barely any of at all
+I know the language really well but am pretty behind when it comes to the admin side
+
+Jason Howe
+2:23 PM
+yes, I'm not really sure we do it the best way... but it seemed to get to a point were Dave and I could share projects pretty easily.   It took a lot of trial and error to get to this point and we have a lot of different "setups" now.
+
+2:24 PM
+I guess the joke goes that there are no true Java experts
+
+Jason Howe
+2:24 PM
+lol
+
+2:25 PM
+I have a meeting in a few minutes but when I package up the project does it need to be a particular Java version? 8 I guess?
+
+Jason Howe
+2:26 PM
+ya we have been trying to update to 8
