@@ -1,3 +1,0 @@
-JUnit is pretty much the standard thing to use:
-https://www.baeldung.com/junit-5
-https://junit.org/junit5/docs/current/user-guide/
