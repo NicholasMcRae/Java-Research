@@ -1,0 +1,22 @@
+- What is JUnit5?
+	- unlike previous versions, composed of several different modules
+	- JUnit Platform + JUnit Jupiter + JUnit Vintage
+		- Platform - foundation
+		- Jupiter - programming and extension model
+		- Vintage - old versions
+- Supported Versions
+	- Requires Java 8 (or higher) at runtime
+	
+- Writing Tests
+	- Example code
+	- Test Annotation types do various things
+	- Tests with certain annotations must not return a value
+	- You can cretae meta-annotations and composed annotations
+	- Standard Test Class
+	- Tests can have display names
+	- Third party assertion libraries for more powerful functinality
+	- Can disable tests
+	- Tests can be tagged
+	- Tests can be repeated
+	- Tests can be dynamic
+	- 
