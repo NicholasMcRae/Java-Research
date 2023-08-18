@@ -1,5 +1,5 @@
-- Building java applications of scale
-- Finding java applications of scale on github
+- Java Applications of Scale
+- Java Applications on Github
 - Core features of J2EE
 - Security in J2EE
 - Web Application types with J2EE
@@ -9,6 +9,7 @@
 - Java Security Conccepts
 - Java design best practices
 - Spring Framework
+- Spring Security Framework
 - baeldung.com
 	- Helps developers explore the Java ecosystem and be better engineers
 	- Strong focus on building web applications, Spring, Spring Security, and RESTful APIs
