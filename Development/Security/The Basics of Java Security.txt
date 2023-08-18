@@ -1,0 +1,72 @@
+Language Features
+- Static Data Typing - type of variable is known at compile time - reduces runtime type related errors
+- Access modifiers - control access to fields, methods, and classes
+- Automatic Memory Management
+- Bytecode Verification - verifies every bytecode it loads for execution
+
+Security Architecture in Java
+- core principles of security in Java are driven by interoperable and extensible Provider implementations
+-  Typical services a Provider may implement:
+	- Cryptographic Algorithms
+	- Key generation, conversion, management facilities
+- Java ships with many built-inproviders
+
+Java Cryptography
+- Java Cryptographic Architecture provides a framework to access and implement cryptographic functionalities in Java, including:
+	- Digital signatures
+	- Message digests
+	- Symmetric and asymmetric ciphers
+	- Message authentication codes
+	- Key generators and key factories
+- Moreover, Java includes built-in providers for commonly used cryptographic algorithms, like RSA, DSA, and AES
+	- We can use these algorithms to add security to data in rest, in use, or in motion
+	
+Cryptography in Practice
+- A very common use case in applications is to store user passwords
+- One solution is to scramble the passwords in such a way that the process is repeatable, yet only one-way
+	- Cryptographic hash function, and SHA1 is one such popular algorithm
+	
+Public Key Infrastructure
+- setup that enables the secure exchange of information over the network using public-key encryption
+- Relies on trust that is built between the parties involved in the communication
+- Trust is based on digital certificates issued by a neutral and trusted authority known as a Certificate Authority (CA)
+- Public Key Infrastructure support in java
+
+Authentication
+- Java APIs make use of pluggable login modules to provide different and often multiple authentication mechanisms to applications
+- LoginContext provides this abstraction, which in turn refers to configuration and loads an appropriate login module
+
+Secure Communication
+- Communication over the network is vulnerable to many attack vectors, someone can tap into the network and read our data packets
+- Over the years, the industry has established many protocols to secure this information
+- Java provides APIs to secure network communication with
+	- Encryption
+	- Message Integrity
+	- Client and server authentication
+		- SSL/TLS
+		- SASL
+		- GGS-API/Kerberos
+		
+Access Control
+- Access control refers to protecting sensitive resources like a filesystem or codebase from unwarranted access
+- we can achieve access control in Java using classes Policy and Permission mediated through the SecurityManager class
+- SecurityManager is part of the java.lang package and is responsible for enforcing access control checks in Java
+- During the sequence of code execution, if the runtime encounters a request for a protected resource,
+	- SecurityManager verifies the requested Persmission against the installed policy through the call stack
+	- Consequently it either grants permission or throws a SecurityException
+
+XML Signature
+- useful in securing data and providing data integrity
+
+Security Beyond Core Java
+- As we have seen, the Java platform provides a lot of the ncessary functionality to write secure applications
+- However, sometimes these are quite low level and not directly applicable to, for example, standard security mechanisms on the web
+- We often need quicker, higher-level ways to achieve security, which is where application frameworks come into the picture
+- These help us achieve our objective with much less boilerplate code
+- On the Java platform that generally means Spring Security, which is part of the Spring ecosystem, but it can actually be used outside of pure Spring application
+- In simple terms, it helps us achieve authentication, authorization, and other security features in a simple, declarative, high-level manner
+
+Questions:	
+- SHA1 - how viable is it?
+- Best practices for password security?
+- Spring framework for security
