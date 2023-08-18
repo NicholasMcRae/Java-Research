@@ -1,0 +1,96 @@
+https://docs.oracle.com/cd/E19644-01/817-5448/dgsecure.html
+
+- J2EE applications contain components that perform user authenticiation and access authorization for servlets
+- Sun Java System Application Server Security Goals
+	- In an enterprise computing environment there are many security risks - our goal is to provide highly secure, interoperable, and distributed component computing based on the J2EE security model
+	- Compliance with the J2EE Security Model - for more information see J2EE specification v1.3 Chapter 3 Security
+	- Compliance with the EJB v2.0 security model - for more information see Enterprise JavaBeans specification Chapter 15 Security Management. This includes EJB role-based authorization
+	- Comliance with the Java Servlet security model (Java Servlet Specification, Chapter 11 security)
+	- Support for single sign-on across all Sun Java Application Server applications within a single security domain
+	- Security support for ACC clients (Application Client Container)
+	- Support for several underlying authentication realms, such as simple file and LDAP. Certificate authentication is also supported for SSL client authentication
+	- Declarative security via Sun Java System Application Server
+	
+- Sun Java System Application Server Specific Security Features
+	- Single sign-on across all Sun java System Application Server applications within a single security domain
+	- Programmatic login
+	
+- Security Model
+	- Secure applications require a client to be authenticated as a valid application users and have authorization to access servlets, JSPs, and EJB business logic
+	- Supprts security for web, ACC, web service, and JMS clients
+	- Applications with secure web and EJB containers may enforce the following security processes for clients:
+		- Authenticate the caller
+		- Authorize the claler for access to the EJB business methods
+		
+- Web Applications and URL Authorizations
+	- The web container supports three types of authentication: basic, certificate, and form-based
+	- when a browser requests the main application URL, the web container collects the user authentication information and passes it to the security service for authentication
+	- the Application Server consults the security policies with the web resource to determine the security roles used to permit resource access
+	- The web container tests the users credentials against each role
+	
+- Invocation of Enterprise Bean Methods
+	- Once the browser client has been authenticated and authorized by the web container and the servlet performs a method call to the EJB component, the user's credentials are propagated to the EJB container
+	
+- ACC Client Invocation of Enterprise Bean Methods
+
+- Security Resonsibilities Overview
+	- A J2EE platform's primary goal is to isolate the developer from the security mechanism details and facilitate a secure application in diverse environments
+	- Provides mechanisms for the application security specification requirements declaratively and outside the application
+	- Application Developer
+		- Specifying application roles
+		- Defining role-based access restrictions for the application components
+		- Programmatic security management id discouraged, since it hard codes the security login in the application instead of allowing the containers to manage it
+	- Application Assembler
+		- assembler or component provider must identify all security dependencies embedded in a component including:
+			- all role names used by the components
+			- references to all external resources accessed by the components
+			- references to all intercomponent calls made by the component
+	- Application Deployer
+		- Takes all component security views provided by the assembler and uses them to secure a particular enterprise environment, including:
+			- assigning users or groups to security roles
+			- refines the privileges required to access component methods to suit the requirements of the specific deployment scenario
+			
+Common Security Terminology
+	- Authentication - verifies the user
+	- Authorization - permits a user to perform the desired operations, after being authenticated
+	- Realms - security policy domain, or security domain in the J2EE specification, is a scope over which a common security policy is defined and enforced by the security administrator
+	- Role Mapping - different users have different access levels
+	
+Container Security
+	- Component containers are responsible for providing J2EE application security. Two security forms:
+		- Programmatic
+		- Declarative
+		- Programmatic 
+			- When an EJB component or servlet users method calls to the security API, to make business logic decisions based on the caller or remote user's security role
+				- Should only be used when declarative security alone is insufficient to meet the application's security model
+		- Declarative
+			- means that the security mechanism for an application is declared and handled externally to the application
+			- deployment descriptors describe the J2EE application's security structure, including security roles, access control, and authentication requirements
+			- Thre are three levels of declarative security, as follows:
+				- Application Level Security
+				- Web Component Level Security
+				- EJB Level Security
+			- Application Level
+				- application XML deployment descriptor contains authorization descriptors for all user roles accessing the application's servlets and EJB components
+			- Web Component Level Security
+				- a secure web container authenticates users and authorizes access to a servlet or JSP by using the security policy laid out in the servlet XML deployment descripts
+				- Once the user has been authenticated and authorized, the servlet passes on user credentials to an EJB component to establish a secure association with the 
+				- Enterprise bean is a server-side component that encapsulates the business logic of an application. The business logic is the code that fulfills the purpose of the application
+				- Enterprise beans simplify development because the EJB container provides system-level services to enterprise beans, the bean developer can concentrate on solving business problems
+					- EJB container, rather than the bean developer, is responsible for system-level services such as transaction management and security authorization
+					- Because beans, rather than the clients contain the application's business logic, the client developer can focus on the presentation of the client. The client developer does not have to code the routines that implement business rules or access databases
+						- As a result, the clients are thinner, a benefit that is particular important for clients that run on small devices
+					- Third, because enterprise beans are portable components, the application assembler can build new applications from existing beans. These applications can run on any compliant Java EE Server provided that they use the standard APIs
+				- Types of Enterprise Beans
+					- Session - performs a task for a client, optionally may implement a web service
+					- Message-Driven - Acts as a listener for a particular messaging type, such as the Java Message Service API
+			- EJB Level Security
+				- The EJB container is responsible for authorizing access to a bean method by using the security policy laid out in the EJB XML deployment descriptors
+		
+- Guide to Security Information
+		
+- Realm Configuration
+					
+Notes
+	- Compliant Java EE server
+	- Oracle Docs
