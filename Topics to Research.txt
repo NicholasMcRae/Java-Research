@@ -8,3 +8,9 @@
 - Test-Driven Development / J-Unit
 - Java Security Conccepts
 - Java design best practices
+- Spring Framework
+- baeldung.com
+	- Helps developers explore the Java ecosystem and be better engineers
+	- Strong focus on building web applications, Spring, Spring Security, and RESTful APIs
+- RESTful APIs
+- Linux
