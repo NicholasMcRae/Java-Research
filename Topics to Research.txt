@@ -14,3 +14,5 @@
 	- Strong focus on building web applications, Spring, Spring Security, and RESTful APIs
 - RESTful APIs
 - Linux
+- J2EE Compliant Servers
+- OWASP
