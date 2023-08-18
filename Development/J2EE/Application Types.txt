@@ -1,0 +1,17 @@
+- an EAR file requires a fully Java Platform, Enterprise Edition or Jakarta Enterprise edition to run
+- a WAR file only requires a Java EE Web Profile compliant application server to run
+- a JAR file only requires a Java installation
+- The Java EE also defines a special type of JAR file that contains only Enterprise JavaBeans
+	- has jar extension but contains a special deployment descriptor and is intended to isolate EJB components
+- https://stackoverflow.com/questions/1594667/war-vs-ear-file
+- EAR files are a superset containing WAR files and JAR files
+	- Java Application Servers allow deployment of standalone web modules in a WAR file, though internally they create EAR files as a wrapper around WAR files
+	- standalone web containers such as Tomcat and Jetty do not support EAR files, these are not full-fledged Application servers
+	- in application servers EAR files contain configurations such as application security role mapping, EJB reference mapping, and context root URL mapping of web modules
+	- Apart from Web and EJB, EARs can also contain connector modules packaged as RAR files, and client modules packaged as Jar files
+- Dynamic Web Project
+	- requires only a servlet container, can't use enterprise features like the EJB container
+- Enterprise Application Project
+	- requires a servlet container
+	- requires an EJB container
+- if you need a project that will use JSP + JSF you are fine with a dynamic web project
