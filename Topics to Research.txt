@@ -17,3 +17,4 @@
 - Linux
 - J2EE Compliant Servers
 - OWASP
+- Application types built under J2EE
