@@ -1,0 +1,7 @@
+- When to use static methods
+	- https://stackoverflow.com/questions/2671496/when-to-use-static-methods
+- When to use final keyword
+	-https://stackoverflow.com/questions/154314/when-should-one-use-final-for-method-parameters-and-local-variables
+- Interface vs Abstract Class in Java
+	- https://www.baeldung.com/java-interface-vs-abstract-class
+	
