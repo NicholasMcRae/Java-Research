@@ -6,7 +6,7 @@
 - Javascript frameworks with java
 - Maven
 - Test-Driven Development / J-Unit
-- Java Security Conccepts
+- Java Security Concepts
 - Java design best practices
 - Spring Framework
 - Spring Security Framework
