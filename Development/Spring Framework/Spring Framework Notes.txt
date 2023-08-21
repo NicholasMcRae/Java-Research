@@ -1,0 +1,53 @@
+Spring Framework Reference Documentation
+****************************************
+
+Part I 
+
+- Overview
+- lightweight solution for building your enterprise-ready applications. However, Spring is modular, allowing you to use only those parts that you need
+- Spring is designed to be non-intrusive, meaning that your domain logic code generally has no dependencies on the framework itself
+
+- Introduction to the Spring Framework
+- Provides comprehensive infrastructure support for developing Java applications
+- Spring handles the infrastructure so you can focus on your application
+- Enables to you to build applications from 'plain old java objects' and to apply enterprise services non-invasively to POJOs
+	- applies to the Java SE model, and to full and partial Java EE
+- Examples of how developers can ebnefit
+	- Make a Java method execute in a database transaction without having to deal with transaction APIs
+		- https://www.baeldung.com/java-transactions
+	- Make a local Java method a remote procedure without having to deal with remote APIs
+		- https://docs.oracle.com/javase/8/docs/platform/rmi/spec/rmi-intro2.html
+	- Make a local Java method a management operation without having to deal with JMX APIs
+	- Make a local Java method a message handler without having to deal with JMS APIs
+- Dependency Injection and Inversion of Control
+	- A Java Application - can be many different types - typically consists of objects that collaborate to form the application proper. Thus the objects in an application have dependencies on each other
+	- the Java platform lacks the means to organize the basic building blocks into a coherent whole
+	- Although you can use design patterns such as factory, abstract factory, builder, decorator, and service locator. Patterns are formalized best practices that you must implement yourself in your application
+	- **the Spring Framework Inversion of Control (IoC) component addresses this concern by providing a formalized means of composing disparate components into a fully working application ready for use
+	- The Spring Framework codifies foramlized design patterns as first-class objects that you can integrate into your own applications
+	- Modules
+		- the Spring Framework consists of features organized into about 20 modules
+			- Core Container
+				- fundamental parts of the framework - IoC and Dependency Injenction
+					- Removes the need for programmatic singletons and allows you to decouple the configuration and specification of dependencies from your actual program logic
+			- Data Access/Integration
+				- JDBC, ORM, OXM, JMS, and Transaction Modules
+			- Web
+				- Web functionality
+			- AOP
+				- Alliance-compliant aspect-oriented programming implementation allowing you to define method intercetpors and poitncuts 
+				- clearly decouple code that implements functionality that should be separated
+			- Instrumentation
+			- Messaging
+				- Serve as a foundation for messaging-based applications
+				- Module also includes a set of annotations for mapping messages to methods
+			- Test
+				- Spring-Test module supports the unit testing and integration testing of Spring components with JUnit or TestNG
+	- Dependency Management and Naming Conventions
+		- to get those nice features of Spring into your application you need to assembly all the libraries needed (jar files) and get them onto your classpath at runtime, and possibly at compile time
+		- these dependencies are not virtual components that are injected, but physical resources in a file system
+		- the process of dependency management involves locating those resources, storing them, and adding them to classpaths
+		- if you are going to use Spring you need to get a copy of the jar libraries that comprise the pieces of Spring that you need
+		- Spring is published in Maven
+		
+- Part II: Core Technologies
