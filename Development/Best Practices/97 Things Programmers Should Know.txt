@@ -1,0 +1,334 @@
+Apply Functional Programming Principles
+- Minimizing mutability
+- Better responsibility allocation
+- More numerous, smaller functions
+- Simpler to debug
+
+Ask 'What would the user do'
+
+Automate your coding standard
+
+Beauty is in simplicity
+- Beautiful code is simple code
+- Each individual part is kept simple with simple responsibilities and simple relationships
+
+Before you refactor 
+- Take stock of existing code and tests
+- Reuse code
+- Many incremental changes are better than one massive change
+- Ensure that tests keep passing
+- No ego
+- New technology is a bad reason
+- New code can be worse
+
+Beware the share
+- Re-use isn't always better
+- Sometimes we want two parts to be able to evolve separately
+
+The Boy Scout Rule
+- Leave the campground cleaner than when you found it
+
+Check your code before blaming others
+- Question your own assumptions and the assumptions of others
+
+Choose Your Tools with Care
+- Different tools may rely on different assumptions about their context
+- Different tools have different lifecycles
+- Vendor lock-in occurs
+- Free isn't always free
+
+Code in the language of the domain
+
+Code is design
+- The pressure to use incomplete designs is strong
+
+Code Layout Matters
+- Easy to Scan
+- Expressive Layout
+- Compact Format
+
+Code Reviews
+- Purpose of code reviews should be to share knowledge and establish common guidelines
+- Collective code ownership
+- Ensure comments are constructive, not caustic
+
+Coding with Reason
+- Tightness in code - bunch of suggestions
+
+A comment on comment
+- Common only what the code cannot say
+
+Continuous Learning
+- Keep learning to stay relevant
+
+Convenience is not an -ility
+- Favour convenience for user over laziness
+
+Deploy Early and Often
+- Continuous deployment
+
+Business Exceptions from Technical
+- Techinical problems and business logic that prevents us from misusing the application
+- They should be distinguished from each other
+
+Do Lots of Deliberate Practice
+- Deliberate practice to improve your ability to perform a task
+- Do what you're not good at
+- The principal aim of deliberate practice is to improve your performance
+- How much time to you spend developing yourself?
+
+Domain-Specific Languages
+- You must always take the target audience of your DSL into account
+- Are they developers, managers, business customers, or end users
+- You have to adapt the technical level of the language
+
+Don't be Afraid to Break Things
+- Don't be afraid of your code. Who cares if something gets temporarily broken while you move things around
+- A paralyzing fear of change is what got your project into this state to begin with
+- Invest time to refactor
+
+Don't be Cute with Your Test Data
+- Don't put data in your app that you don't want people to see
+
+Don't Ingore That Error
+- No matter how unlikely you think an error is in your code, you should always check for it, and always handle it
+- Every time
+- You're not saving time if you don't, you're storing up potential problems in the future
+
+Don't Just Learn the Language, Understand It's Culture
+- Once you've learned the ropes of a new language, you'll be surprised how you'll start using languages you already know in neww ways
+- You'll also get a better understanding of design patterns by moving between different languages
+
+Don't Nail Your Program into the Upright Position
+- Plentiful try/catch constructs through our codebase, we are sometimes able to prevent our applications from aborting
+- we think of the resultant state is nailing the corpse in the upright position
+
+Don't Rely on 'Magic Happens Here'
+- Understand the magic that makes your project work, appreciate someone who understands the bits you don't
+
+Don't Repeat Yourself
+- Repetition in process calls for automation
+- Duplication is waste
+- Repetition in logic calls for abstration
+
+Don't Touch That Code
+- Under no circumstances, ever, at all, should a developer have access to a production server
+- If it's broke, production is not the place to fix it
+
+Encapsulate Behavior, Not Just State
+- An object encapsulates both state and behavior
+- Where the behavior is defined by the actual state
+
+Floating Point Numbers Aren't Real
+- Make sure that the tolerance you request is no smaller than the spacing there, otherwise you'll loop forever
+- Floating point numbers are approximations of real numbers
+
+Fulfill Your Ambitions with Open Source
+- Chances are that you are not developing software at work that fulfills your most ambitious daydreams
+- Open source is a solution
+
+The Golden Rule of API Design
+- static, final, and sealed are not inherently bad constructs, they can be useful at times
+- but it is important to be aware of the testing issue
+
+The Guru Myth
+- To those unfamiliar with software systems seem magical
+- But gurus are just people who apply logic and systematically analyze problems like the rest of us
+
+Hard Work Does Not Pay Off
+- If you are trying to be focused and productive for more than 30 hours a week you are probably working too hard
+- To avoid wasted work, you must allow time to observe the effects of what you're doing
+
+How to Use a Bug Tracker
+- Ask for more information or consider what you could have missed
+
+Improve Code by Removing It
+- simplify code, improve product performance, and reduced level of global code entropy
+
+Install Me
+- We all constantly perform cost/benefit analaysis of everything we do
+- If your project drops below the threshold for even a second, I will ditch it and go on to something else
+
+Interprocess Communication Affects Application Response Time
+- Response Time is Critical to Software usability
+- Interprocess communications usually dominates
+
+Keep the Build Clean
+- The warnings and problems start piling up
+- zero tolerance policy for warnings from the build
+
+Know How to Use Command-Lind Tools
+- by working with command line build tools, you will learn a lot more about what the tools are doing when your project is being built
+
+Know Well More Than Two Programming Languages
+- Knowing more than one language expands our understanding of software
+
+Know Your IDE
+- know the features of your IDE
+
+Know Your Limits
+- Know yourself, know your people, know your budgets, and know your stuff
+
+Know Your Next Commit
+- Be able to decompose the problem into units
+- Avoid specualize programming
+
+Large, Interconnected data belongs to a database
+- don't hesitate to store large, persistent, interconnected set of data elements in a relational database
+
+Learn Foreign Languages
+- Know the human side of the field
+
+Learn to Estimate
+- you need to be able to perform estimates for the tasks you need to perform
+
+Learn to Say, Hello World
+- A general purpose computer can do little tasks too, I opened a text editor and began typing
+
+Let Your Project Speak For Itself
+- Give your project some kind of visibility if metrics aren't being hit
+
+The Linker is Not a Magical Program
+- There is nothing magical about linkers. The mechanics are straightofrward; it's the details you have to figure out in each case
+
+The Longevity of Interim Solutions
+- Avoid creating interim solutions in the first place
+- Change the forces that influence the decision of the project manager 
+
+Make Interfaces Easy to Use Correctly and Hard to Use INcorrectly
+- Good interfaces anticipate mistakes people might make and make them difficult, ideally impossible, to commit
+
+Make the Invisible More Visible
+- It's best to develop software with plenty of regular visible evidence, which gives confidence that progress is genuine and not an illusion
+
+Message Passing Leads to Better Scalability in Parallel Systems
+- instead of using threads and hsared memory as our programming model, we can use processes and message passing
+
+A Message to the Future
+- Think about how people interact with your code in the future
+
+Missing Opportunities for Polymorphism
+- Sometimes polymorphism can yield a smaller, more readable and less fragile codebase
+
+Testers Are Your Friends
+- Testers make you look great when things are tested
+
+One Binary
+- Only have one binary for every development environment
+
+Only the Code Tells the Truth
+- When debugging a problem you need to see the code
+
+Own (and Refactor) the Build
+- The build is an essential part of the development process, and decisions about the build process can make the code and the coding simpler
+
+Pair Program and Feel the Flow
+- As a team, introduce pair programming to promote distribution of skills and knowledge throughout the project
+- Reduce the truck factor - people as points of failure
+
+Prefer Domain-Specific Types to Primitive Types
+- Stronger and more domain specific typing had been applied
+
+Prevent Errors
+- Most errors are systematic, the result of misunderstandings between the user and the software
+- Understanding how users think, interpret information, make decisions, and input data will help you debug interactions between software and users
+
+The Professional Programmer
+- Professional programmers take responsibility for their career, their estimates, their schedule commitments, their mistakes, and their workmanship
+
+Put Everything Under Version Control
+- There are many benefits to version control
+
+Put the Mouse Down and Step Away from the Keyboard
+- Getting away from the computer will give you space to think
+
+Read Code
+- 
+
+Read the Humanities
+- Software is about people too
+
+Reinvent the wheel often
+- Becoming a great programmer is as much about acquiring experience as it is about collecting facts
+
+Resist the Temptation of the Singleton Pattern
+- Most singletons do more harm than good, they hinder testability and harm maintainability
+
+The Road to Performance is Littered with Dirty Code Bombs
+- software metrics can be a powerful tool in our fight for clean code
+- They can help us to idnetify and eliminate dirty code bombs
+
+Simplicity Comes From Reduction
+- More time gets wasted in trying to salvage bad work than it should
+- Once something becomes a resource sink, it needs to be discarded. Quickly.
+- There should be nothing extraneous
+
+The Single Responsibility Principle
+- Everything you write should have one responsibility
+
+Start from Yes
+- Assume you can solve the problem
+- Instead of saying no, start with why
+
+Step Back and Automate, Automate, Automate
+
+Take Advantage of Code Analysis Tools
+- Tests need to be sufficiently precise, but they also need to be accurate
+
+Test Precisely and Concretely
+- You need to really think about your tests
+
+Test While You Sleep (and over Weekends)
+- Have automated tests running in off hours
+
+Testing is the Engineering Rigor of Software Development
+- You need to test
+
+Thinking in States
+- Missing checks and redundant checks all the time
+- you need to check that you're in the expected state before doing operations
+- you have to protect your objects carefully
+
+Two Heads are Better than One
+- Collaboration improves quality, productivity, and job satisfaction for programmers
+
+Two Wrongs Can Make a Right (and are difficult to fix)
+- There is no simple advice for how to address faults arising from sympathetic defects. Awareness of the possibility, a clear head, and a willingness to consider all possibilities are needed
+
+Ubuntu Coding for Your Friends
+- Developers have a synergistic effect on each other
+
+The Unix Tools Are Your Friends
+- Sharpening your unix tool skills makes you more effective at any task
+
+Use the Right Algorithm and Data Structure
+- Avoid needless calls inside algorithms
+
+Verbose Logging Will Disturb Your Sleep
+- Too much logging can be as useless as none at all
+
+WET
+- Don't have to fix multiple implementations
+
+When Programmers and Testers Collaborate
+- Something magical happens when testers and programmers start to collaborate
+
+Write Code As If You Had to Support It For the Rest of Your Life
+
+Write Small Functions Using Examples
+- Smaller units lead to better testability
+
+Write Tests for People
+- Good tests act as documentation for the code they are testing
+
+You Gotta Care About the Code
+- You'll only write good code if you actually care about good code
+
+Your Customers do not mean what they say
+- Challenge your customers early, and challenge them often
+
+
+
+
+
+

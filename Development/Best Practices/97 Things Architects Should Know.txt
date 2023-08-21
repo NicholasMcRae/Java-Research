@@ -1,0 +1,549 @@
+1. Don't Prioritize resume 
+
+- choose technologies because they are the right technologies, not for other reasons
+
+2. Essential vs Accidental Complexity
+
+- When complexity is necessary, be as simple as possible. Avoid unnecessary complexity
+- Accidental complexity grows from the things we feel we must build to mitigate essential complexity
+- Over-engineered frameworks add more complexity than they relieve
+
+3. Your biggest problem likely isn't technical
+- It pays to think about what it takes to make your developers successful
+- What you need is a conversation
+- Learning to treat people with respect, and give them the benefit of the doubt makes an architect more effective
+- Conversations, not confrontations
+- When you've got the right attitude
+- Set mutually agreed upon goals
+
+4. Communication is King; Clarity and Leadership it's servants
+- Be clear and concise in the way you communicate your ideas
+- Keep things simple as possible at the start of a project
+- As a leader you must gain respect of your co-workers
+- Let people know why decisions were made the way they were
+- Work with developers, not against them
+
+5. Architecting is about balancing
+- Technical issues must be balanced with needs of business stakeholders
+- Define ultimate set of priorities
+- Don't only create functional, quality software, but also balance other priorities
+
+6. Seek the value in requested capabilities
+- Customers often state what they think is a viable solution
+- Ignore their solution and try to understand what they're trying to accomplish
+
+7. Stand up!
+- Standing up automatically communicates authority and self-confidence
+
+8. Skyscrapers aren't scalable
+- Traditional big bang deployments are like stacking up a pile of beams and girders and expecting them to stick together in the shape of a building
+- We should plan to deploy one component at a time
+- When we deploy software, we are exposing ourselves to accumulated technical risk embodied in the code
+- Lets us harden each component
+- Forces us to create well-defined interfaces between components
+
+9. You're negotiating more often than you think
+- We're looking for a collaborative solution finding exercise; they're looking for a win-lose tactical maneuver. You don't want to make a concession on the first demand
+
+10. Quantify
+- Be precise about your requirements, not vague terms like 'fast' or 'responsive'
+
+11. Working code is worth 500 lines of specs
+- Specifications alone have no value, the ultimate goal is a production system
+- Value the team who work on implementing your vision. Listen to them
+
+12. No one size fits all solution
+- Architects must develop 'contextual sense', because there is no one-size-fits-all solution to problems which may be widely diverse
+- What is reasonable within a given context
+- A big problem in the industry is that people are often responsible for solving problems requiring more contextual sense than they've accumulated
+
+13. It's never too early to think about performance
+- If you aren't looking at performance until late in the project cycle you have lost an incredible amount of information as to when performance changed
+- If performance is going to be an important criterion should begin as soon as possible
+
+14. Application architecture determines application performance
+- In the end all vendor products and application architectures are constrainted by the same fundamental principles of distributed computing and underlying physics
+- Applications run as porcesses on computers of limited capacity, communicating with each other via protocol stacks and links of non-zero latency
+
+15. Commit and Run is a Crime
+- Make testing and process easy to ensure people are testing before they commit
+
+16. There can be More than One
+- In technical domains we can force uniqueness. In business domains the inconsistent messy world intrudes
+- Why not face up to the reality of a messy world and allow multiple, inconsistent, overlapping representations, services, solutions
+- Consider the possibility that decomposition of your system by non-functional parameters may reveal opportunities to allow diverse solutions to your advantage
+
+17. Business Drives
+- Business organization's objectives and operating realities should be the light in which an Architect leads technology-oriented decision making
+- Businesses want a ROI
+
+18. Simplicity before generality, use before reuse
+- Some code is designed to be general purpose without reference to concrete applications, leading to a dizzying array of options and possibilities that are often unused, misused, or just not useful
+- Simplicity through experience rather than generality through guesswork
+- Favouring simplicity before generality acts as a tiebreaker between ohterwise equally viable design alternatives
+- When there are two possible solutions, favor the one that is simpler and based on a concrete need
+- Software components should, first and foremost, be designed for use and to fulfill that use well
+
+19. Architects must be hands on
+- A good architect should lead by example, should be able to fulfill any of the positions within his team 
+
+20. Continuously Integrate
+- Architect should encourage continuous integration rather than build as a 'big bang' event
+
+21. Avoid Scheduling Failures
+- One common source of project failure is altering the project schedule in midstream without proper planning
+- Problems occur when you are asked to do more in the same time
+
+22. Architectural Tradeoffs
+- Every software architect should know that you can't have it all
+
+23. Database as a Fortress
+- Your data lasts forever
+- Enough cannot be said about the importance of building a solid data model from Day One
+- While business rules and user interfaces do evolve rapidly, the structures and relationships within the data you collect often do not
+- Therefore, it is critical to have your data model defined right from the start, both structurally and analytically
+
+24. Use Uncertainty as a Driver
+- Confronted with two options, most people think that the most important thing to do is to make a choice between them
+- The presence of two options is an indicator that you need to consider uncertainty in the design
+- Use the uncertianty as a driver to determine where you can defer commitment to details and where you can partition and abstract to reduce the significance of design decisions
+
+25. Scope is the enemy of success
+- Expanding scope is the enemy of success because the probability of failure grows faster than expected. Doubling a project's scope often increases its probability of failure by an order of magnitude
+
+26. Reuse is about people and education, not just architecture
+- the truth is that even the most beautiful, elegant and re-usable architecture, framework, or system will only be re-used by people who know it is there, know how to use it, are convinced that it is better than doing it themselves
+
+27. There is no 'I' in architecture
+- Get your own ego out of the way
+
+28. Get the 1000ft view
+- The 1000 ft view isn't directly in the source code (ground level) or the very high level view (diagrams)
+- It would provide information at the right level. It aggregates large amounts of data and multiple metrics - method count, class fan out
+- The actual view very much depends on a specific aspect of quality
+
+29. Try before choosing
+- we should delay commitment until the last responsible moment, that is the moment at which, if the team does not make a decision, it is made for them
+- when inaction results in an outcome that is not easily reversible
+- this is produent because the later a decision is made the more information is available on which to base the decision
+- the architect should constantly be on the look out for decisions that will have to be made soon
+- the architect doesn't have to make the decision just orchestrate the decision making process
+- Try a few approaches to the same problem - requires more effort but better odds of a good outcome
+
+30. Understand the business domain
+- Without business domain knowledge, it is difficult to undrestand the business problem, goals, and requirements, and therefore difficult to design an effective architecture to meet the requirements of the business
+
+31. Programming is an act of design
+- Development is a process of discovery and learning and not one of engineering and construction are fundamental to bring software practices forward
+- By accepting that carving out source code is an act of design, not an act of construction we are in a position to adopt useful management practices that are proven to work
+
+32. Time changes everything
+- Over time a good solution to the right challenge will outlast all others
+- Keep it simple
+- Was the solution an appropriate one for the problem? Did it solve the needs of the problem? Keep these as your measure, you will be a lot happier
+
+33. Give developers autonomy
+- Make sure the design is being implemented as intended, but don't stand over people's shoulders to accomplish that goal
+
+34. Value stewardship over showmanship
+- Showmanship is important in marketing, but is counter productive to leading a software development project
+- Architects must win the respect of their team by providing solid leadership and by truly understanding the technical and business domain
+- Stewardship, taking responsibility and care of another's property is the appropriate role of an architect, act in the interests of their customer 
+
+35. Warning, problems in mirror may be larger than they appear
+- issues that caused more problems than the team expected
+- often, a small part of the team identified the issue early on and the majority dismissed because they didn't understand how important it was until it was too late
+- Establish an organized approach to managing risks, track risks the same way you track bugs
+- Bad smells are worth recognizing. If the facts aren't there yet, look for the simplest tests that would provide the facts
+- Blind spots are hard to recognize. People you trust to tell you the truth when you need it are a precious resource
+
+36. The title of software architect has only lower-case 'a's; deal with it
+- don't worry about the status of architects
+
+37. Software architecture has ethical consequences
+- If programs are successful they affect the lives of many people, impact can be positive or negative
+- Every time I make a decision about how a program behaves, I am really deciding what my users can and cannot do
+- It's not ethical to worsen the lives of others, even a small bit, just to make things easy for yourself
+
+38. Everything will ultimately fail
+- Accept that, no matter what, your system will have a variety of failure modes
+- If you do not design your failure modes, then you will get whatever unpredictable, and usually dangerous, ones happen to emerge
+
+39. Context is King
+- effectively, there are no ideals, context is king, and simplicity it's humble servant
+- context is the only force that trumps simplicity when making architectural decisions
+- when I say context I refer not only to immediate forces like business drivers, but also emerging technologies and thought leadership on diverse topics
+- good architects keep track of several fast-moving targets
+- Good architecture is the product of decisions made within a context usually tainted with multiple competing priorities
+
+40. It's all about performance
+- People assume that the speed of the system will be acceptable
+- System designers must consider many aspects of performance - programmers who implement, human interactions of the system, non-interactive components
+- Measure task time, defined as the time required to complete a domain-specific task, including all human interactions with the system
+- performance of non-interactive components is equally important to the success of the system
+
+41. Engineer in the white spaces
+- A system consists of interdependent programs
+- We call the arrangement of these programs and their relationships 'architecture'
+- the arrow bridging programs looks like a direct contact, but it isn't. The white space between the boxes is filled with hardware and software components
+- It's essential to understand that static and dynamic loads that arrow must carry
+
+42. Talk the Talk
+- It is imperative that software architects, regardless of the platform they are working in, have an effective means of communication between one another
+- one means is through architecture and design patterns
+- Design patterns can be classified into four basic categories: enterprise architecture patterns, application architecture patterns, integration patterns, and design patterns
+- generally based on the level of scope within the overall architecture
+- knowing the basic design patterns as described by the Gang of Four Book is a must for any software architect
+- they are a part of a standard vocabulary
+- it is important to be aware of and understand the various anti-patterns as well - a term coined by Andrew Koenig - repeatable processes that produce ineffective results
+
+43. Heterogeneity Wins
+- As an industry we are faced with very serious problems and we need all the interoperability we can get
+- Your job as architect has become ven more challenging because technology silos are crumbling in the face of new possibilities
+
+44. Dwarves, Elves, Wizards and Kings
+- An architect is a king of sorts, must be familiar with all of these characters and ensure that the architecture has roles for all of these characters
+- The team will be severely limited in its reach if it can only approach problems in one way
+
+45. Learn from Architects of Buildings
+- Not getting a clear lesson out of this one
+
+46. Fight repetition
+- Are your developers performing recurring tasks that need little thinking? Can you find recurring patterns in the code?
+- Duplication is evil
+- Repetitive work slows down development
+- Your responsibility is to remove it
+
+47. Welcome to the Real World
+- The real world is not binary
+- Customers are inconsistent
+- Distributed systems introduce a new set of inconsistencies
+- Awareness is a first important step towards a solution
+- Say good bye to the good old predictive architecture
+
+48. Don't Control, but Observe
+- We build loosely coupled systems because we want our systems to be flexible
+- Building a system that is flexible and can evolve over time is a good idea
+- Being a control freak is yesteryear, but letting software run wild is sure to spawn chaos
+- You have to supplement lack of control with other mechanisms to avoid doing an instrument flight with other instruments
+- Observation, model extraction, and validation, only way to architect for the 21st century
+
+49. Janus the Architect
+- an excellent IT architect will be a superior listener and evaluator
+- being able to evaluate the technical skills of your staff with the design and technology to be used within the project will aid in creating a successful project
+- a good architect is open to new ideas, tools, and designs that progress the project, team, or profession
+- a keeper of doors and passageways
+
+50. Architects focus is on the boundaries and interfaces
+- the hard part is to find the natural places to locate boundaries and define the appropriate interfaces needed to build a working system
+- difficult in large enterprise systems
+- old wisdom such as: minimize coupling, maximize cohesion, and do not slice through regions where high rates of info exchange are required provide some guidance
+- bounded contexts that address organizational, functional, or technical dependencies
+- The result is a context map - a powerful tool
+
+51. Challenge assumptions - especially your own
+- assumption is th emother of all screw ups
+- You should document rationale behind each decision that is made
+- valuable because it helps highlight assumptions that the architects may have that are affecting important decisions
+- It is important to make these assumptions visible and explicit for the sake of posterity
+- and don't overlook the word relevant, something that was formerly true may not be today
+- facts and assumptions are the pillars on which your software will be built, make sure they're solid
+
+52. Record your rationale
+- one type of documentation that ages well is to record the rationale behind decisions that are made
+- documentation may come in handy in a number of situations
+- also allows you to challenge assumptions or re-evaluate a decision, when conditions have changed
+
+53. Empower Developers
+- the role of an architect is usually to impose constraints
+- but you also have the opportunity to be an enabler - empower your developers
+- make sure devs have the tools they need, should be carefully chosen to make sure they are the right tools for the job at hand
+- repetitive and mindless work should be automated wherever possible
+- let developers make decisions where it won't contradict software design
+- protect developers from nonessential parts of their job
+
+54. It's all about the data
+- the data-oriented perspective, seeing the system, entirely by the structure of its underlying information can reduce a complicated system to a tangible collection of details
+- a reduction in complexity that is necessary for understanding how to build and run complex systems
+
+55. Control the data, not just the code
+- along with source code, schema and data changes are often a significant part of this process and thus warrant similar controls
+- for some reason, the data portion of the migration plan seems to be easil overlooked during architecture planning
+- as a result it can become a brittle, manual process that gets bolted on as an afterthought
+- database changes shouldn't create a ripple in your build's time space continuum
+- you need to be able to build the entire application, including the database, as one unit
+- allows confident refactoring of the data access layer
+
+56. Don't Stretch the Architecture Metaphors
+- development team starts to think that the metaphor is more important than the actual business problem
+- you start to justify odd decisions because of a fondness for the metaphor
+
+57. Focus on Application Support and Maintenance
+- the support and maintenance of an application should never, ever be an after-thought
+- since over 80% of an application's life-cycle is spent in maintenance, you should pay a lot of attention to the problems of support when you're designing
+
+58. Prepare to pick two
+- Sometimes accepting a constraint or giving up on a property can lead to a better architecture, one that is easier and less expensive to build and run
+- Treating properties as religious artifacts will stop you thinking about the problem at hand
+- Instead we should ask - why must these properties hold? What benefit is had by doing so?
+- Be a skeptic
+
+59. Prefer principles, axioms and analogies to opinion and taste
+- gives architecture a number of benefits not present if you create by only leveraging your experience and opinions
+- Disagreements about opinion and taste invariable turn into political arguments in which authority is used to win
+
+60. Start with a Walking Skeleton
+- minimal, end to end implementation of the system that links together all the main architectural components
+- starting small, with a working system exercising all the communication paths, 
+- once the skeleton is in place, it's time to put it on a working program
+- we want to find mistakes early
+- gives us a short feedback cycle
+
+61. It is all about the data
+- millions of instructions are complicated, but underneath we can get our brains around a smaller set of basic data structures
+- the data-oriented perspective--seeing the system entirely by the structure of its underlying information, can reduce even the most complicated system down to a tangible collection of details. A reduction incomplexity is necessary for understanding how to build and run complex systems
+- from a design perspective, the critical issue for most systems it to get the right data into the system at the right time
+- data forms the core of every system
+
+62. Make sure the simple stuff is simple
+- we don'twant to apply a complicated solution to an easy problem
+- Stop and think: does the solution fit the problem? If the answer is no, reconsider your design options
+- Keep the simple stuff simple
+- The cost incurred by a complicated solution may be larger than you're giving it credit for
+- Poor decisions are difficult to maintain, and worst - reverse
+- Add unecessary risk to the project
+- Simpler design will be much easier to integrate new requirements when they arrive
+
+63. Before anything, an architect is a developer
+- even architects are expected tocontinue learning the new developments within their respective fields. As software architects, we should be held to the same standards
+- gaining developers trust
+- part of designing a solution is having knowledge of the effort involved in developing the elements of the solution
+- if you design it you should be able to code it
+
+64. The ROI Variable
+- everything we do is a form of investment
+- investments come with a cost and carry trust that they will pay off
+- consider architectural decisions as investments and take into account the associated rate of return
+- It is a useful approach for finding out how pragmatic or appropriate every option on the table is
+
+65. Your System is Legacy; Design for it
+- your system will be legacy to the next guy - deal with it
+- this means several things
+	- clarity: it should be obvious what role components and calsses perform
+	- testability: is your system easy to verify
+	- correctness: do things work as designed or as they should. Eliminate quick and nasty fixes
+	- Traceability: can someone who has never seen the code before, jump into production, diagnose a fault, and put in a fix. Or does he need an eight week handover
+- try to think of a different team opening up the codebase and working out what's happening. This is fundamental for great architecture
+
+66. If there is only one solution, get a second opinion
+- if you can only think of one solution to a problem, you're in trouble
+- it is rarely possible to satisfy all requirements and constraints with the first solution that comes to mind
+- if you only have one solution to the problem at hand, it means that you will have no room to negotitate these tradeoffs
+- it means that if business requirements change, your system may have no room to adapt to new requirements
+- rarely, do you actually have a lack of options
+- it is much more likely due to the inexperience of the architect in this particular problem domain
+- a more insidious manifestation of this problem is when an architecture is designed from habit
+
+67. Understand the impact of change
+- a good architect designa s olution whose abstractions provide solid foundations to build upon, but are pragmatic enough to weather change
+- the great architect understands the impact of change, not just in isolated system modeules, but also between people and between systems
+- change can manifest in a variety of forms
+	- functional requirements change
+	- scalability needs evolve
+	- system interfaces are modified
+	- people in the team come and go
+- architect's role is to ensure that change is manageable
+- There are many techniques to mitigate the impact of change
+	- make small, incremental changes
+	- build repeatable test cases and run them often
+	- make building test cases easier
+	- track dependencies
+	- act and react systematically
+	- automate repetitive tasks
+- spend more time on those areas whose impact would be the greatest as a result of a bump in the road
+- reducing complexity is important, but reduced complexity does not equate to simplicity
+
+68. You have to understand hardware, too
+- for many architects hardware capacity planning is a topic that lies beyond their comfort zone, yet it remains an important part of the architect's job
+- we tend to ignore hardware demands
+- we are naturally isolated from hardware by high-level languages and software frameworks
+- without hardware expertise, predicting hardware configurations foor systems to be developed is highly error prone
+- the best defense against poor hardware planning is to work closely with an infrastructure architect
+
+69. Shortcuts now are paid back with interst later
+- maintenance will in the long runc onsume more resources than initial development of the project
+- shortcuts taken during the initial development phase of a project can result in significant maintenance costs later
+- it's also important to correct poor design decisions as quickly as they are discovered
+- poorly designed features can become the foundation for future features, making corrective action later even more costly
+- whenever you encounter an architectural problem or design flaw, insist that it be rectified now, when it is cheapest to fix. You longer you lave it to drag out, the higher the interest payment is
+
+70. Perfect is the enemy of good enough
+- Don't give in to the temptation to make your design or your implementation perfect. Aim for good enough and stop when you've achiveved it
+- good enough means that the remaining imperfections do not impact system functionality., maintainability, or performance in any meaningful way
+- The architecture and design hangs together
+- The implementation works and meets the performace requirements. Code is clea, consise, and well documented
+
+71. Avoid 'Good Ideas'
+- everyone can recognize bad ieas, it's the 'good' ones that slip through and cause trouble with scope, complexity, and sheer wasted effort
+- incorporating somethign into the application that isn't necessary to meet the business need
+
+72. Great Content Creates Great Systems
+- many initiatives focus endlessly on requirements but not the actual point of the system-- the data
+- Great content means the difference between a system that is hollow and one that is relevant
+- content is king, content is the network, content is the interface
+- part of the design process for a new system should be devoted to assessing content inventory
+- Designing an effective domain/object/data model is not enough
+
+73. The Business Versus the Angry Architect
+- there comes a time when we realize many of the issues we encounter are recurring
+- many of the problems are similar
+- we have reached homeostasis which is the perfect time to make a colossal mistake
+- the poor decision usually comes with a side of cynicism, impatience, and general anger toward inferior minds who dare contradict your superior understanding
+- in it's worst form this overconfidence bleeds into the business realm
+- we live to serve the business
+
+74. Stretch Key Dimensions to See What Breaks
+- Examine limits in the design that will occur, e.g. when system becomes wildly popular
+
+75. If you Design It, you should be able to code it
+- at the end of the day, someone has to implement your design, and the architectural acrobatics that you have the developers perform impact the project
+- don't use a pattern in your design that you haven't personally implemented before. Don't rely on a framework that you haven't coded against before etc
+- you won't be able to give a good estimate on time to implement
+
+76. A Rose by Any Other Name Will End Up As a Cabbage
+- if you don't know what a thing should be called, you cannot know what it is
+- if you don't know what it is, you cannot sit down and write the code
+- if you can't agree on a name that is specific enough for you to know when it is wrong, then you might have some difficulty even getting started
+- design is all about trying to fulfill intentions, and names convey intentions
+- if you change the name three times, then you should stop until you know what you're trying to build
+
+77. Stable Problems Get High-Quality Solutions
+- in the real world, the best architects don't solve hard problems, they work around them
+- the skills in in drawing boundaries around diffuse and diverse software problems so that they are stable and self-contained
+- an architect should be able to look at a whole mess of concepts and data and process and separate them into smaller pieces or 'chunks'
+- the important thing about those problem chunks is that they are stable, allowing them to be solved by a system chunk that is finite and stable in scope
+- the problem chunks should be:
+	- internally cohesive - conceptually unified, so all of the tasks, data, and features are related
+	- well separated from other chunks, normalized, little or no overlap between them
+- some people will do this without realizing it, they just want to create nice interfaces
+- if the problem is stable, then when it is solved it is solved permanently
+- your core system won't need to change - the system is durable because the problem is durable
+- a stable problem allows you to create a system with a stable design, which allows you to concentrate on making an application that has very high quality
+
+78. It Takes Diligence
+- diligence is ultimately an exercise in perseverance and paying the right amount of attention to each task, and each architectural goal of the system
+
+79. Take Responsibility for Your Decisions
+- How can you become a responsible software architect who makes effective architectural decisions
+- first, you have to be fully cognizant of your decision process, whether it is agile or ceremonial
+- you should not claim that an architectural decision has been made until the following two conditions are met
+	- a decision has been put in writing, because architectural decisions are rarely trivial
+	- a decision has been communicated to the people who execute it
+- second, review your architectural decision periodically, examine the results of your decisions against expectations. identify decisions that remain valid and those that do not
+- enforce your decisions
+- delegate some decision making to others who are experts in a problem domain
+
+80. Don't Be Clever
+- Clevernes implies an ability to quickly conceive of a solution that may get you otu of a jam, but that ultimately rests on a gimmick, a shell game, or a switcharoo
+- don't be clever, be as dumb as you possibly can and still create the appropriate design
+- the appropriate design will never be clever
+- it takes a smart architect to be dumb
+
+81. Choose Your Weapons Carefully, Relinquish Them Reluctantly
+- We are often compelled to lay down our weapons of choice for new alternatives, but don't be too quick to dismiss your trusty armamemts
+- to case them aside for alternatives that haven't been proven through similar trials is a risky proposition
+- as architects we need to stay abreast of industry trends, but we don't need tobe the first to embrace fledghling technology
+- there is usually no huge advantage to being the first to adopt new technology, but there can be several drawbacks
+- many new technologies claim such advancement but few deliver it
+- Before you decide to blaze a trail with new technology, ask yourself how the business will benefit from this decision. If the best outcome is that no one will notice, rethink your decision
+
+82. Your Customer is Not Your Customer
+- Your customer's customer is your customer
+- If your customer's customer wins, your customer wins, which mean you win
+
+83. It Will Never Look Like That
+- A detailed design can easily fool you into believing you have every angle covered
+- something will happen, an external factor may affect the design
+- Design is a discovery process, as we implement, we discover new information that is often impossible to know upfront
+- the design process must be flexible and ongoing
+
+84. Choose Frameworks that Play Well With Others
+- when choosing frameworks you must consider the individual quality and features of each framework
+- also how well the frameworks that make up your system will work together, and how easy it will be to adapt them to new software you may need to add as your system evolves
+- you must choose frameworks that do not overlap, that are humble, simple, and specialized
+- it is best if each framework addresses a separate logical domain or concern and does not tread into the domain or concern of another framework you need to use
+- choose frameworks that have a high utility to baggage ratio
+
+85. Make a Strong Business Case
+- make a strong business case for your architecture
+- value proposition, metrics, business measures, know where to stop, time it right
+
+86. Control the Data, Not Just the Code
+- continuous integration and source control are excellent tools for managing the application build and deployment process
+- make data and schema management a seamless part of your automated build and testing process early on and include an undo button; it will pay large dividends
+
+87. Pay Down Your Technical Debt
+- on any project that is in production there will come a time when a change must be made
+- at that point you can either do it right or you can take one or more shortcuts and try to get the change out the door sooner
+- proper technical debt should be re-paid
+
+88. Don't Be a Problem Solver
+-Sometimes the best solution is no solution. Many software problems don't need to be solved at all
+- We must not be passive receptacles for requirements, cheerfully ready at our posts, handing out our smartest solution
+- see if you can change the problem. What would the architecture look like if I just didn't have this problem
+
+89. Build Systems to Be Zuhanden
+- our systems exist to help someone do something
+- Consider what it feels like to hammer a nail or to write with a pen. Think about that immediacy. Think about the way the tool seems to be a seamless extension of your body
+- a tool should move you toward your goal and not impede your progress
+
+90. Find and Retain Passionate Problem Solvers
+- You need to carefully select your development team and protect it once assembled
+- You are searching for developers with problem-solving skills and passion
+- You need people who are good at attacking problems regardless of the technologies involved
+
+91. Sof5tware Doesn't Really Exist
+- Assuming you can implement the design in the same mannager used by more traditional engineering approaches is unrealistic
+- in software things need to be tackled in more of a plan the work, massage the plan fashion
+- business owners are vaguely aware of these facts, makes it easy for them to push big changes
+- a requirements document is not a blueprint
+
+92. Learn a New Language
+- you should at least speak basic business, and testing
+- be able to explain problems in the language of the business
+
+93. You Can't Future-Proof Solutions
+- no one can't predict the future, if you accept this the question becomes how far ahead is the future
+- it's simply not possible to future proof an architecture
+- today's solution will always be tomorrow's problem
+- this relieves you of the burden of trying to future proof your architectures
+- choose the best solution that meets your needs today
+
+94. The User Acceptance Problem
+- Your goal as an architect is to be aware of and measure the threat of acceptance problems and work toward mitigating those threats
+- to do this you have to be cognizant of them and consider the reasons for them
+- a project champion can help avoid user acceptance problems, represents the user group or stakeholders
+
+95. The Importance of Consomme
+- Architecture requires a continual refinement of thought, repeated straining of ideas until we have determined the essence of each requirement in the system
+- we clarify our concepts to make the relations within the architecture true and internally consistent
+- many missed requirements and bugs can be traced to ambiguous, general language
+- look for contradictions in requirements
+
+96. For the End User, the Interface is the System
+- there are many good products hidden behind bad user interfaces
+- the end user will access the system through the interface
+- if the ui sucks, impression of the product will suffer
+- architect should ensure that user interface changes with the architecture reflected the expectations of the users
+
+97. Great software is not built, it is grown
+- you are tasked with providing the initial structure and arrangement of software systems that will grow and change over time, will have to be reworked, and will have to talk to other systems
+- the single biggest predictor of software failure is size, on reflection there's almost no benefit to be had from starting with a large system design
+	- means we are more likely to fail
+- resist trying to design a large complete system to meet or exceed the known requirements and desired properties, no matter how tempting that might be
+- start with a small, running system, a working subset of the intended architecture. The simplest thing that could possibly work
+- evolve it toward the grand vision
+
+
+
+
