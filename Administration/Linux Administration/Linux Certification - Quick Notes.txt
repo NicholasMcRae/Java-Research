@@ -1,0 +1,44 @@
+Chapter 3 - System Architecture
+- Candidates should be able to determine and configure fundamental system hardware
+- Setting up a PC for linux requires some familiarity with the devices installed in the system and their configuration
+- Many devices require manual configuration
+- You should know how to examine a running linux system's resource assignments using the /proc filesystem
+
+Chapter 4 - Change Runlevels and Shut Down or Reboot System
+- continues subject of general knowledge of fundamental PC architecture
+- objectives:
+	- boot the system
+	- change runlevels and shut down or reboot system
+	
+Chapter 5 - Linux Installation and Package Management 
+- Objectives focus on four installation topics and packaging tools
+	- Design Hard Disk Layout
+	- Install a Boot Manager
+	- Manage Shared Libraries
+	- Use Debian Package Management
+	- Use Red Hat Package Manager (RPM)
+	
+Chapter 6 - GNU and Unix Commands - ** Relevant **
+- Covers the essential skill of working with Linux command line utilities
+- Objectives
+	- Work on the Command Line
+	- Process Text Streams Using Filters
+	- Perform Basic File Management
+	- Use Streams, Pipes, and Redirects
+	- Create, Monitor, and Kill Processes
+	- Modify Process Execution Priorities
+	- Search Text Files using regular expressions
+	- Perform basic file editing operations using VI
+- The Interactive Shell
+	- shell is a powerful programming environment, capable of automating nearly anything you can imagine on your Linux system
+	- PATH - contains a list of all the directories that hold commands or other programs you are likely to execute
+		- you may wish to modify the default ot add other directories that hold programs you need to run
+	- ls -l
+		- adding an argument further refines the command's behavior
+		- ls -l *.c
+	- command history
+	- there are many times when it is necessary to execute commands recursively
+		- dangerous
+	- Manpages
+		- man command was created to put the books on the system
+		- there is a manpage for most commands on your system, also for important files, library functions, shells, languages, devices, and other features
