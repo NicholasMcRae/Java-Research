@@ -4,4 +4,10 @@
 	-https://stackoverflow.com/questions/154314/when-should-one-use-final-for-method-parameters-and-local-variables
 - Interface vs Abstract Class in Java
 	- https://www.baeldung.com/java-interface-vs-abstract-class
+- What is an interface?	
+	- https://docs.oracle.com/javase/tutorial/java/concepts/interface.html
+- What is an abstract class?
+	- https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html
+- What are abstract classes/methods and what are they for?
+	- https://forums.oracle.com/ords/apexds/post/what-are-abstract-classes-methods-and-what-are-they-for-3007
 	
