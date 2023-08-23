@@ -1,53 +1,115 @@
 Spring Framework Reference Documentation
 ****************************************
 
-Part I 
+Part I: Introduction 
 
 - Overview
-- lightweight solution for building your enterprise-ready applications. However, Spring is modular, allowing you to use only those parts that you need
-- Spring is designed to be non-intrusive, meaning that your domain logic code generally has no dependencies on the framework itself
+	- lightweight solution for building your enterprise-ready applications. However, Spring is modular, allowing you to use only those parts that you need
+	- Spring is designed to be non-intrusive, meaning that your domain logic code generally has no dependencies on the framework itself
 
 - Introduction to the Spring Framework
-- Provides comprehensive infrastructure support for developing Java applications
-- Spring handles the infrastructure so you can focus on your application
-- Enables to you to build applications from 'plain old java objects' and to apply enterprise services non-invasively to POJOs
-	- applies to the Java SE model, and to full and partial Java EE
-- Examples of how developers can ebnefit
-	- Make a Java method execute in a database transaction without having to deal with transaction APIs
-		- https://www.baeldung.com/java-transactions
-	- Make a local Java method a remote procedure without having to deal with remote APIs
-		- https://docs.oracle.com/javase/8/docs/platform/rmi/spec/rmi-intro2.html
-	- Make a local Java method a management operation without having to deal with JMX APIs
-	- Make a local Java method a message handler without having to deal with JMS APIs
-- Dependency Injection and Inversion of Control
-	- A Java Application - can be many different types - typically consists of objects that collaborate to form the application proper. Thus the objects in an application have dependencies on each other
-	- the Java platform lacks the means to organize the basic building blocks into a coherent whole
-	- Although you can use design patterns such as factory, abstract factory, builder, decorator, and service locator. Patterns are formalized best practices that you must implement yourself in your application
-	- **the Spring Framework Inversion of Control (IoC) component addresses this concern by providing a formalized means of composing disparate components into a fully working application ready for use
-	- The Spring Framework codifies foramlized design patterns as first-class objects that you can integrate into your own applications
-	- Modules
-		- the Spring Framework consists of features organized into about 20 modules
-			- Core Container
-				- fundamental parts of the framework - IoC and Dependency Injenction
-					- Removes the need for programmatic singletons and allows you to decouple the configuration and specification of dependencies from your actual program logic
-			- Data Access/Integration
-				- JDBC, ORM, OXM, JMS, and Transaction Modules
-			- Web
-				- Web functionality
-			- AOP
-				- Alliance-compliant aspect-oriented programming implementation allowing you to define method intercetpors and poitncuts 
-				- clearly decouple code that implements functionality that should be separated
-			- Instrumentation
-			- Messaging
-				- Serve as a foundation for messaging-based applications
-				- Module also includes a set of annotations for mapping messages to methods
-			- Test
-				- Spring-Test module supports the unit testing and integration testing of Spring components with JUnit or TestNG
-	- Dependency Management and Naming Conventions
-		- to get those nice features of Spring into your application you need to assembly all the libraries needed (jar files) and get them onto your classpath at runtime, and possibly at compile time
-		- these dependencies are not virtual components that are injected, but physical resources in a file system
-		- the process of dependency management involves locating those resources, storing them, and adding them to classpaths
-		- if you are going to use Spring you need to get a copy of the jar libraries that comprise the pieces of Spring that you need
-		- Spring is published in Maven
+	- Provides comprehensive infrastructure support for developing Java applications
+	- Spring handles the infrastructure so you can focus on your application
+	- Enables to you to build applications from 'plain old java objects' and to apply enterprise services non-invasively to POJOs
+		- applies to the Java SE model, and to full and partial Java EE
+	- Examples of how developers can benefit
+		- Make a Java method execute in a database transaction without having to deal with transaction APIs
+			- https://www.baeldung.com/java-transactions
+		- Make a local Java method a remote procedure without having to deal with remote APIs
+			- https://docs.oracle.com/javase/8/docs/platform/rmi/spec/rmi-intro2.html
+		- Make a local Java method a management operation without having to deal with JMX APIs
+		- Make a local Java method a message handler without having to deal with JMS APIs
+	- Dependency Injection and Inversion of Control
+		- A Java Application - can be many different types - typically consists of objects that collaborate to form the application proper. Thus the objects in an application have dependencies on each other
+		- The Java platform lacks the means to organize the basic building blocks into a coherent whole
+		- Although you can use design patterns such as factory, abstract factory, builder, decorator, and service locator. Patterns are formalized best practices that you must implement yourself in your application
+		- **the Spring Framework Inversion of Control (IoC) component addresses this concern by providing a formalized means of composing disparate components into a fully working application ready for use
+		- The Spring Framework codifies formalized design patterns as first-class objects that you can integrate into your own applications
+		- Modules
+			- the Spring Framework consists of features organized into about 20 modules
+				- Core Container
+					- fundamental parts of the framework - IoC and Dependency Injection
+						- Removes the need for programmatic singletons and allows you to decouple the configuration and specification of dependencies from your actual program logic
+				- Data Access/Integration
+					- JDBC, ORM, OXM, JMS, and Transaction Modules
+				- Web
+					- Web functionality
+				- AOP
+					- Alliance-compliant aspect-oriented programming implementation allowing you to define method interceptors and pointcuts 
+					- Clearly decouple code that implements functionality that should be separated
+				- Instrumentation
+				- Messaging
+					- Serve as a foundation for messaging-based applications
+					- Module also includes a set of annotations for mapping messages to methods
+				- Test
+					- Spring-Test module supports the unit testing and integration testing of Spring components with JUnit or TestNG
+		- Dependency Management and Naming Conventions
+			- to get those nice features of Spring into your application you need to assemble all the libraries needed (jar files) and get them onto your classpath at runtime, and possibly at compile time
+			- these dependencies are not virtual components that are injected, but physical resources in a file system
+			- the process of dependency management involves locating those resources, storing them, and adding them to classpaths
+			- if you are going to use Spring you need to get a copy of the jar libraries that comprise the pieces of Spring that you need
+			- Spring is published in Maven
 		
 - Part II: Core Technologies
+	- Most integral is the Inversion of Control container
+	- Followed by Aspect-Oriented Programming technologies
+	- ** Aspect-oriented programming is a programming paradigm that aims to increase modularity by allowing the separation of cross-cutting concerns. It does so by adding behavior to existing code without modifying the code itself
+		- instead separately specifying which code is modified via a pointcut specification
+	- The IoC container
+		- Introduction to the Spring IoC container and beans
+			- IoC is also known as dependency injection. A process whereby objects define their dependencies (objects they work with) only through constructor arguments, arguments to a factory method, or properties that are set on the 
+			object instance after it is constructed or returned from a factory method
+			- The container then injects those dependencies when it creates the bean. This process is fundamentally the inverse, hence the name Inversion of Control, of the bean itself controlling the instantiation or location of its depencies
+			by using direct construction of classes, or a mechanism such as the Service Locator pattern
+			- org.springframework.beans and org.springframework.context packages are the basis for Spring Framework's IoC container
+				- BeanFactory interface provides an advanced configuration mechanism capable of managing any type of object
+				- ApplicationContext is a subinterface of BeanFactory, which adds easier integration with AOP features
+			- In short, BeanFactory provides the configuration framework and basic functionality, and the ApplicationContext adds more enterprise-specific functionality
+			- The objects that form the backbone of your application and that are managed by the Spring IoC container are called beans, an object that is instantiated, assembled, and otherwise managed by a Spring IoC container.
+			- Beans, and the dependencies among them, are reflected in the configuration metadata used by a container
+	- Container Overview
+		- org.springframework.context.ApplicationContext represents the Spring IoC container and is responsible for instantiating, configuring, and assembling beans
+		- container gets its instructions on what objects to instantiate, configure, and assemble by reading configuration metadata, represented in XML, Java annotations, or Java code
+		- allows you to express objects that compose your application and the interdependencies between such objects
+		- in standalone applications it is common to create an instance of ClassPathXmlApplicationContext or FileSystemXml ApplicationContext
+			- XML is traditional format, can also use annotations or code as the metadata format by using XML to declare this
+		- in most application scenarios, explicit user code is not required to instantiate one or more instances of a Spring IoC container
+		- How to configure metadata section
+		- Instantiating a container section
+	- Using the container
+		- The ApplicationContext is the interface for an advanced factory capable of maintaining a registry of different beans and their dependencies
+		- ApplicationContext enables you to read bean definitions and access them as follows
+		- You use getBean() to retrieve instances of your beans
+		- there are a few other methods for retrieving beans
+	- Bean Overview
+		- A Spring IoC container manages one or more beans
+		- These beans are created with the configuration metadata
+		- Within the container itself, these bean definitions are represented as BeanDefinition objects, which contain the following metadata
+		- Explanations of bean properties
+	- Dependencies
+		- Even the simplest application has a few objects that work together to present what the end-user sees as a coherent application
+		- This next section explains how you go from defining a number of bean definitions that stand alone to a fully realized application where objects collaborate to achieve a goal
+		- Dependency Injection
+			- Objects define dependencies in one of a few ways
+			- The container then injects those dependencies when it creates the bean
+				- fundamentally the inverse of the bean itself controlling the instantiation or location of its dependencies on its own by using direct construction of classes, or the Service Locator pattern
+				- Code is cleaner with the DI principle and decoupling is more effective when objects are provided with their dependencies
+				- The object does not look up its dependencies, and does not know the location or class of the dependencies
+				- As such, your classes become easier to test
+			- DI exists in two major variants - Constructor-based dependency injection and Setter-based dependency injection
+			- Inner Beans
+			- Collections
+			- Method Injection
+	- Bean Scopes
+		- Singleton
+		- Prototype
+		- Request
+		- Session
+		- Application
+		- Websocket
+	- Customizing the nature of a bean
+		- Lifecycle callbacks
+	- Bean definition inheritance
+	- Classpath Scanning and Managed Components
+	- Use ApplicationContext, not BeanFactory
+	- 
