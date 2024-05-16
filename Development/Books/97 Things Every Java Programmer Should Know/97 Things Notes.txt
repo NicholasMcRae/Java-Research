@@ -1,0 +1,62 @@
+All you Need is Java
+********************
+- Next time an idea for a small program springs to mind, awaken your knowledge of the java classl ibrary, rather than searching for something else
+
+Approval Testing
+****************
+- When you decide the output is correct and use it as the expected value, you 'approve' a result, it's good enough to keep
+- With a classic unit testing framework like JUnit, it can be a bit painful to update those expected strings
+- With an approval testing tool, the approved string gets stored in a file instead
+- That immediately opens up new possibilities
+- If you already have tests that make assertions about strings that are longer than one line, then I recommend finding out more about approval testing and
+  starting to use a tool that supports it
+  
+Augment Javadoc with AsciiDoc
+*****************************
+- Javadoc - documentation generator right into the compiler and standard toolchain
+- The resulting explosion of API documentation has benefited us all, and the trend has spread
+- Sometimes you need more than API documentation
+- AsciiDoc, rich, attractive documentation for the projects that are shared
+
+Be Aware of Your Container Surroundings
+***************************************
+- there is a danger to containerizing legacy Java applications as is, with their legacy Java Virtual Machine
+	- ergonomics of those older JVMs will be fooled when running inside Docker containers
+- Containers have become the defacto runtime packaging mechanism
+- Benefits
+	- isolation
+	- improved resource utilization
+	- ability to deploy applications across different environments
+	- reduce the coupling between an application and the underlying platform, as application can be packaged into a portable container
+- This is sometimes used to modernize legacy applications
+- This can help keep older applications running on modern, supported infrastructure by decoupling them from older, supported infrastructure
+- But this comes with risks due to JVM ergonomics
+- JVM ergonomics enables JVM to tune itself by looking at two key environmental metrics: number of CPUs and available memory
+- With these metrics, JVM determines which garbage collector to use, how to configure, heap size, etc
+- Linux Docker container support added JDK 8 update 191
+- Any JVM older than that is not aware that is is running within a container and will access metrics from the host OS, not from the container
+
+Behavior is Easy, State is Hard
+*******************************
+- encapsulation allows us to tame the growing state and complexity that is a constant in software
+- the idea that we can internalize the state, hide it from other components, and offer only a carefully designed API surface for state mutation is core
+  to design and coding of complex information systems
+- JavaBean properties on anemic classes that simply expose internal state through getters and setters are common
+- in JEE we have popularized the concept that most business logic should be implemented in service classes
+	- getters to extract, process them to get a result, then put them back into our object with setters
+- the hardest bugs to solve are the ones caused by inconsistent state, you've reached a state in your system that shouldn't happen, but there it is
+- odds of finding cause is low, classes have surfaces that are too mutable, and too easily accessed
+	- any piece of code, anywhere in the system, can mutate our state without any kind of checks or balances
+- 'innocent' setter is still there allowing any piece of code to call it
+- and I won't even discuss the likelihood of someone using update statements directly on the database on change some columns in db mapped entities
+- how to solve? immutability is one of the possible answers
+- If we can guarantee that our objects are immutable, and the state consistency is checked on object creation, we'll never have an inconsistent state in our system
+- most Java frameworks do not cope very well with immutability, so we should aim to minimize mutability
+- Having properly coded factory methods and builders can also help us to achieve this minimally mutable state
+- don't generate your setters automatically, take time to think about them. Do you really need it?
+- And if you do, consider using an 'anti-corruption' layer to protect and validate your internal state after thoset setter interactions
+
+Benchmarking is Hard - JMH Helps
+********************************
+- JMH, Java Microbenching Harness, to the OpenJDK
+- Consists of a small library and a build system plug in
